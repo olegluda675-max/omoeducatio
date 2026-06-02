@@ -1,0 +1,2901 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Олег Омельченко — стратегия, образование и трансфер технологий</title>
+<meta name="description" content="Стратегический консалтинг, корпоративное образование и трансфер технологий — для бизнеса и университетов. К.э.н., доцент. 23+ лет руководства группами компаний; 15+ лет в высшем образовании; авторские методологии, депонированные в РЦИС.РФ." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,300..900,30..100;1,9..144,300..900,30..100&family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=JetBrains+Mono:wght@300..700&display=swap" rel="stylesheet" />
+
+<style>
+:root {
+  --ink:        #11151c;
+  --ink-soft:   #1d2330;
+  --paper:      #f4efe6;
+  --paper-warm: #ece6da;
+  --accent:     #b8763e;      /* burnt ochre */
+  --accent-deep:#8a5424;
+  --mute:       #5c584f;
+  --rule:       rgba(17, 21, 28, 0.14);
+  --rule-paper: rgba(244, 239, 230, 0.18);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: 'Instrument Sans', sans-serif;
+  font-size: 16px;
+  line-height: 1.55;
+  font-feature-settings: "ss01", "cv01", "cv02";
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+}
+
+/* ─── Subtle paper grain background ─────────────────────────── */
+body::before {
+  content: '';
+  position: fixed; inset: 0;
+  background-image:
+    radial-gradient(rgba(17,21,28,0.025) 1px, transparent 1px);
+  background-size: 3px 3px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* ─── Typography ────────────────────────────────────────────── */
+.serif {
+  font-family: 'Fraunces', serif;
+  font-variation-settings: "opsz" 144, "SOFT" 100;
+  font-weight: 350;
+  letter-spacing: -0.025em;
+}
+.mono {
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 300;
+}
+.label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-weight: 400;
+  color: var(--mute);
+}
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent-deep);
+}
+.eyebrow::before {
+  content: '';
+  width: 28px;
+  height: 1px;
+  background: var(--accent);
+}
+
+/* ─── Layout primitives ─────────────────────────────────────── */
+.wrap   { max-width: 1340px; margin: 0 auto; padding: 0 40px; position: relative; z-index: 2; }
+.wrap-w { max-width: 1480px; margin: 0 auto; padding: 0 40px; position: relative; z-index: 2; }
+section { position: relative; padding: 140px 0; }
+.rule   { height: 1px; background: var(--rule); width: 100%; }
+.rule-thick { height: 2px; background: var(--ink); width: 100%; }
+
+/* ─── Navigation ────────────────────────────────────────────── */
+nav {
+  position: fixed; top: 0; left: 0; right: 0;
+  z-index: 100;
+  padding: 18px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(244, 239, 230, 0.78);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--rule);
+  transition: padding 0.4s ease;
+}
+nav .brand {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  font-family: 'Fraunces', serif;
+  font-weight: 400;
+  font-size: 17px;
+  letter-spacing: -0.01em;
+  font-variation-settings: "opsz" 14;
+  text-decoration: none;
+  color: var(--ink);
+}
+nav .brand .mark { width: 34px; height: 22px; display: block; flex-shrink: 0; }
+nav .brand em {
+  font-style: italic;
+  color: var(--accent);
+  font-weight: 350;
+}
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 36px;
+}
+nav ul a {
+  font-size: 13px;
+  color: var(--ink);
+  text-decoration: none;
+  letter-spacing: 0;
+  position: relative;
+  padding: 4px 0;
+  transition: color 0.25s ease;
+}
+nav ul a::after {
+  content: '';
+  position: absolute;
+  left: 0; bottom: 0;
+  height: 1px;
+  width: 0;
+  background: var(--accent);
+  transition: width 0.3s ease;
+}
+nav ul a:hover { color: var(--accent); }
+nav ul a:hover::after { width: 100%; }
+nav .nav-cta {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  padding: 10px 18px;
+  border: 1px solid var(--ink);
+  border-radius: 0;
+  text-decoration: none;
+  color: var(--ink);
+  transition: all 0.3s ease;
+}
+nav .nav-cta:hover {
+  background: var(--ink);
+  color: var(--paper);
+}
+nav .nav-actions { display: flex; align-items: center; gap: 10px; }
+nav .nav-cta--accent {
+  border-color: var(--accent);
+  color: var(--accent-deep);
+  background: rgba(184,118,62,0.06);
+}
+nav .nav-cta--accent:hover {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+}
+@media (max-width: 900px) {
+  nav ul { display: none; }
+}
+@media (max-width: 600px) {
+  nav .brand span { display: none; }
+  nav .nav-cta { font-size: 10px; padding: 9px 11px; letter-spacing: 0.08em; }
+  nav .nav-actions { gap: 7px; }
+}
+
+/* ─── HERO ──────────────────────────────────────────────────── */
+.hero {
+  min-height: 100vh;
+  padding: 160px 0 100px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+.hero .wrap-w { width: 100%; }
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0;
+}
+.hero-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 72px;
+  padding-bottom: 22px;
+  border-bottom: 1px solid var(--rule);
+}
+.hero-meta .label-set {
+  display: flex;
+  gap: 36px;
+  flex-wrap: wrap;
+}
+
+.hero h1 {
+  font-family: 'Fraunces', serif;
+  font-variation-settings: "opsz" 144, "SOFT" 50, "wght" 320;
+  font-weight: 320;
+  font-size: clamp(54px, 9.5vw, 168px);
+  line-height: 0.92;
+  letter-spacing: -0.045em;
+  color: var(--ink);
+  margin-bottom: 0;
+}
+.hero h1 .ital {
+  font-style: italic;
+  font-variation-settings: "opsz" 144, "SOFT" 100, "wght" 280;
+  color: var(--accent);
+}
+.hero h1 .small-cap {
+  font-family: 'Fraunces', serif;
+  font-style: normal;
+  font-variation-settings: "opsz" 144, "wght" 360;
+  font-size: 0.85em;
+  letter-spacing: -0.03em;
+}
+
+.hero-sub {
+  margin-top: 56px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: end;
+}
+@media (max-width: 800px) { .hero-sub { grid-template-columns: 1fr; gap: 32px; } }
+
+.hero-sub p {
+  max-width: 480px;
+  font-size: 18px;
+  line-height: 1.6;
+  color: var(--ink-soft);
+}
+.hero-cta-row {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+@media (max-width: 800px) { .hero-cta-row { justify-content: flex-start; } }
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  padding: 18px 26px;
+  border: 1px solid var(--ink);
+  text-decoration: none;
+  color: var(--ink);
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.35s cubic-bezier(.2,.7,.2,1);
+  position: relative;
+  overflow: hidden;
+}
+.btn .arrow {
+  display: inline-block;
+  transition: transform 0.35s ease;
+}
+.btn:hover .arrow { transform: translateX(4px); }
+.btn--solid {
+  background: var(--ink);
+  color: var(--paper);
+}
+.btn--solid:hover {
+  background: var(--accent);
+  border-color: var(--accent);
+}
+.btn--ghost:hover {
+  background: var(--ink);
+  color: var(--paper);
+}
+.btn--accent {
+  background: var(--accent);
+  color: #fff;
+  border-color: var(--accent);
+}
+.btn--accent:hover {
+  background: var(--accent-deep);
+  border-color: var(--accent-deep);
+}
+
+/* ─── Hero stats strip ──────────────────────────────────────── */
+.stats-strip {
+  margin-top: 110px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border-top: 2px solid var(--ink);
+  border-bottom: 1px solid var(--rule);
+}
+@media (max-width: 800px) { .stats-strip { grid-template-columns: 1fr; } }
+
+.stat-cell {
+  padding: 40px 32px 36px 0;
+  position: relative;
+  border-right: 1px solid var(--rule);
+}
+.stat-cell:last-child { border-right: none; }
+@media (max-width: 800px) {
+  .stat-cell { border-right: none; border-bottom: 1px solid var(--rule); padding: 32px 0; }
+  .stat-cell:last-child { border-bottom: none; }
+}
+.stat-cell .label { margin-bottom: 14px; }
+.stat-cell .num {
+  font-family: 'Fraunces', serif;
+  font-variation-settings: "opsz" 144, "SOFT" 80, "wght" 300;
+  font-size: clamp(64px, 8vw, 124px);
+  line-height: 0.9;
+  letter-spacing: -0.04em;
+  color: var(--ink);
+}
+.stat-cell .num sup {
+  font-size: 0.4em;
+  font-style: italic;
+  color: var(--accent);
+  font-variation-settings: "opsz" 144, "SOFT" 100;
+  margn-left: 4px;
+  vertical-align: 0.55em;
+}
+.stat-cell .stat-line {
+  margin-top: 10px;
+  font-size: 14px;
+  color: var(--mute);
+  line-height: 1.45;
+}
+.stat-cell .stat-line strong {
+  display: block;
+  font-weight: 500;
+  color: var(--ink);
+  font-size: 15px;
+  margin-bottom: 4px;
+}
+
+/* ─── Marquee / decoration ──────────────────────────────────── */
+.marquee {
+  overflow: hidden;
+  white-space: nowrap;
+  padding: 22px 0;
+  border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+  background: var(--paper-warm);
+}
+.marquee-track {
+  display: inline-flex;
+  gap: 60px;
+  padding-left: 60px;
+  animation: marquee 50s linear infinite;
+  font-family: 'Fraunces', serif;
+  font-variation-settings: "opsz" 48, "SOFT" 100;
+  font-style: italic;
+  font-size: 22px;
+  color: var(--ink-soft);
+}
+.marquee-track span { display: inline-flex; align-items: center; gap: 60px; }
+.marquee-track span::after {
+  content: '✦';
+  color: var(--accent);
+  font-size: 14px;
+  font-style: normal;
+}
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+/* ─── Section header ────────────────────────────────────────── */
+.section-head {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 80px;
+  align-items: start;
+  margin-bottom: 100px;
+}
+@media (max-width: 900px) { .section-head { grid-template-columns: 1fr; gap: 24px; } }
+
+.section-head .left .eyebrow { margin-bottom: 24px; }
+.section-head .left .num-tag {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 13px;
+  color: var(--mute);
+  letter-spacing: 0.1em;
+}
+
+.section-head h2 {
+  font-family: 'Fraunces', serif;
+  font-variation-settings: "opsz" 144, "SOFT" 70, "wght" 320;
+  font-size: clamp(40px, 5.5vw, 80px);
+  line-height: 0.98;
+  letter-spacing: -0.035em;
+  max-width: 14ch;
+  margin-bottom: 24px;
+}
+.section-head h2 em {
+  font-style: italic;
+  color: var(--accent);
+  font-variation-settings: "opsz" 144, "SOFT" 100;
+}
+.section-head .lede {
+  font-size: 17px;
+  line-height: 1.6;
+  color: var(--ink-soft);
+  max-width: 56ch;
+}
+
+/* ─── Services list (editorial table) ───────────────────────── */
+.services {
+  border-top: 2px solid var(--ink);
+}
+.service-row {
+  display: grid;
+  grid-template-columns: 90px 1.4fr 2fr 90px;
+  gap: 40px;
+  padding: 36px 0;
+  border-bottom: 1px solid var(--rule);
+  align-items: start;
+  transition: background 0.4s ease, padding 0.4s ease;
+  cursor: pointer;
+  position: relative;
+}
+.service-row:hover {
+  padding-left: 14px;
+  padding-right: 14px;
+  background: rgba(184, 118, 62, 0.05);
+}
+.service-row .num {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 13px;
+  color: var(--mute);
+  padding-top: 6px;
+}
+.service-row .title {
+  font-family: 'Fraunces', serif;
+  font-variation-settings: "opsz" 60, "SOFT" 50, "wght" 380;
+  font-size: 30px;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+}
+.service-row .title em {
+  font-style: italic;
+  color: var(--accent);
+  font-variation-settings: "opsz" 60, "SOFT" 100;
+}
+.service-row .desc {
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--ink-soft);
+  padding-top: 6px;
+}
+.service-row .arr {
+  font-family: 'Fraunces', serif;
+  font-size: 28px;
+  color: var(--ink);
+  text-align: right;
+  padding-top: 4px;
+  transition: transform 0.4s ease, color 0.4s ease;
+}
+.service-row:hover .arr {
+  transform: translateX(8px);
+  color: var(--accent);
+}
+@media (max-width: 900px) {
+  .service-row { grid-template-columns: 50px 1fr; gap: 18px; padding: 28px 0; }
+  .service-row .desc { grid-column: 2; }
+  .service-row .arr { display: none; }
+}
+
+/* ─── Profile section (DARK) ────────────────────────────────── */
+.profile {
+  background: var(--ink);
+  color: var(--paper);
+  padding: 160px 0;
+  position: relative;
+  overflow: hidden;
+}
+.profile::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 1px;
+  background: var(--accent);
+  opacity: 0.6;
+}
+.profile .label { color: rgba(244,239,230,0.5); }
+.profile .eyebrow { color: var(--accent); }
+
+.profile-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 100px;
+  align-items: center;
+}
+@media (max-width: 900px) { .profile-grid { grid-template-columns: 1fr; gap: 50px; } }
+
+.profile-left h2 {
+  font-family: 'Fraunces', serif;
+  font-variation-settings: "opsz" 144, "SOFT" 80, "wght" 280;
+  font-size: clamp(48px, 6vw, 96px);
+  line-height: 0.95;
+  letter-spacing: -0.04em;
+  margin: 24px 0 32px;
+  color: var(--paper);
+}
+.profile-left h2 em {
+  font-style: italic;
+  color: var(--accent);
+  font-variation-settings: "opsz" 144, "SOFT" 100;
+}
+.profile-left .quote {
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  font-variation-settings: "opsz" 60, "SOFT" 100, "wght" 350;
+  font-size: 22px;
+  line-height: 1.45;
+  color: rgba(244,239,230,0.85);
+  border-left: 1px solid var(--accent);
+  padding-left: 24px;
+  margin-top: 40px;
+  max-width: 50ch;
+}
+
+.profile-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
+  background: rgba(244,239,230,0.18);
+}
+.profile-stat {
+  background: var(--ink);
+  padding: 36px 28px;
+  position: relative;
+}
+.profile-stat .label { margin-bottom: 18px; }
+.profile-stat .num {
+  font-family: 'Fraunces', serif;
+  font-variation-settings: "opsz" 144, "SOFT" 80, "wght" 280;
+  font-size: 84px;
+  line-height: 0.9;
+  color: var(--paper);
+  letter-spacing: -0.04em;
+  margin-bottom: 14px;
+}
+.profile-stat .num sup {
+  font-size: 0.32em;
+  color: var(--accent);
+  font-style: italic;
+  font-variation-settings: "opsz" 144, "SOFT" 100;
+  vertical-align: 0.6em;
+}
+.profile-stat .desc {
+  font-size: 13px;
+  line-height: 1.5;
+  color: rgba(244,239,230,0.65);
+}
+
+.profile-pills {
+  margin-top: 56px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.pill {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 8px 14px;
+  border: 1px solid rgba(244,239,230,0.25);
+  color: rgba(244,239,230,0.85);
+  border-radius: 999px;
+}
+.pill.accent {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--ink);
+}
+
+/* ─── Capabilities grid ─────────────────────────────────────── */
+.capabilities-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--rule);
+  border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+}
+@media (max-width: 900px) { .capabilities-grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 600px) { .capabilities-grid { grid-template-columns: 1fr; } }
+
+.cap-card {
+  background: var(--paper);
+  padding: 42px 36px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  min-height: 280px;
+  position: relative;
+  transition: background 0.35s ease;
+}
+.cap-card:hover { background: var(--paper-warm); }
+.cap-card .cap-num {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  color: var(--accent);
+  letter-spacing: 0.15em;
+  margin-bottom: 4px;
+}
+.cap-card h3 {
+  font-family: 'Fraunces', serif;
+  font-variation-settings: "opsz" 36, "SOFT" 70, "wght" 380;
+  font-size: 22px;
+  line-height: 1.1;
+  letter-spacing: -0.015em;
+  color: var(--ink);
+  margin-bottom: 8px;
+}
+.cap-card p {
+  font-size: 14px;
+  line-height: 1.55;
+  color: var(--ink-soft);
+  flex: 1;
+}
+.cap-card .symbol {
+  position: absolute;
+  top: 36px;
+  right: 36px;
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  font-size: 32px;
+  color: var(--accent);
+  font-variation-settings: "opsz" 60, "SOFT" 100;
+  opacity: 0.7;
+}
+
+/* ─── Methodology section ───────────────────────────────────── */
+.method {
+  background: var(--paper-warm);
+  padding: 140px 0;
+}
+.method-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 32px;
+  margin-top: 30px;
+}
+@media (max-width: 1000px) { .method-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 600px) { .method-grid { grid-template-columns: 1fr; } }
+
+.method-card {
+  padding: 30px 0;
+  border-top: 1px solid var(--ink);
+  position: relative;
+}
+.method-card .school {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 16px;
+}
+.method-card h4 {
+  font-family: 'Fraunces', serif;
+  font-variation-settings: "opsz" 36, "SOFT" 80, "wght" 380;
+  font-size: 22px;
+  letter-spacing: -0.01em;
+  margin-bottom: 14px;
+  color: var(--ink);
+}
+.method-card p {
+  font-size: 14px;
+  line-height: 1.55;
+  color: var(--ink-soft);
+}
+
+/* ─── Frameworks / Analytics ─────────────────────────────────── */
+.frameworks-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 0;
+  border-top: 1px solid var(--rule);
+}
+@media (max-width: 900px) { .frameworks-list { grid-template-columns: 1fr; } }
+
+.fw-item {
+  padding: 32px 28px 32px 0;
+  border-bottom: 1px solid var(--rule);
+  border-right: 1px solid var(--rule);
+}
+.fw-item:nth-child(3n) { border-right: none; }
+@media (max-width: 900px) { .fw-item { border-right: none; padding: 28px 0; } }
+
+.fw-item .fw-num {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  color: var(--accent);
+  letter-spacing: 0.15em;
+  margin-bottom: 14px;
+}
+.fw-item h4 {
+  font-family: 'Fraunces', serif;
+  font-variation-settings: "opsz" 36, "SOFT" 80, "wght" 380;
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: var(--ink);
+}
+.fw-item p {
+  font-size: 14px;
+  line-height: 1.55;
+  color: var(--mute);
+}
+
+/* ─── Monograph / Scholarship ──────────────────────────────── */
+.scholarship {
+  background: var(--ink);
+  color: var(--paper);
+  padding: 160px 0;
+  position: relative;
+}
+.scholarship .label { color: rgba(244,239,230,0.5); }
+.scholarship .eyebrow { color: var(--accent); }
+.scholarship h2 { color: var(--paper); }
+.scholarship h2 em { color: var(--accent); }
+.scholarship .lede { color: rgba(244,239,230,0.75); }
+
+.mono-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  margin-top: 40px;
+}
+@media (max-width: 900px) { .mono-grid { grid-template-columns: 1fr; } }
+
+.mono-card {
+  padding: 40px;
+  border: 1px solid rgba(244,239,230,0.18);
+  position: relative;
+  background: rgba(255,255,255,0.02);
+}
+.mono-card .mono-num {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.15em;
+  color: var(--accent);
+  margin-bottom: 22px;
+}
+.mono-card h3 {
+  font-family: 'Fraunces', serif;
+  font-variation-settings: "opsz" 60, "SOFT" 80, "wght" 340;
+  font-style: italic;
+  font-size: 28px;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+  color: var(--paper);
+  margin-bottom: 20px;
+}
+.mono-card .mono-meta {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  line-height: 1.7;
+  color: rgba(244,239,230,0.55);
+  margin: 22px 0;
+  padding: 18px 0;
+  border-top: 1px solid rgba(244,239,230,0.12);
+  border-bottom: 1px solid rgba(244,239,230,0.12);
+}
+.mono-card .mono-meta div { padding: 2px 0; }
+.mono-card .mono-meta span { color: var(--accent); }
+.mono-card .mono-desc {
+  font-size: 14px;
+  line-height: 1.6;
+  color: rgba(244,239,230,0.78);
+}
+
+.rcis-note {
+  margin-top: 50px;
+  padding: 28px 36px;
+  border-left: 2px solid var(--accent);
+  background: rgba(184,118,62,0.06);
+  font-size: 14px;
+  line-height: 1.65;
+  color: rgba(244,239,230,0.85);
+  max-width: 80ch;
+}
+.rcis-note strong { color: var(--accent); font-weight: 500; }
+
+/* ─── Industry expertise ────────────────────────────────────── */
+.industries {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--rule);
+}
+@media (max-width: 900px) { .industries { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 600px) { .industries { grid-template-columns: 1fr; } }
+
+.ind {
+  background: var(--paper);
+  padding: 38px 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  min-height: 220px;
+  position: relative;
+  transition: background 0.4s ease;
+}
+.ind:hover { background: var(--paper-warm); }
+.ind .ind-num {
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  font-variation-settings: "opsz" 60, "SOFT" 100;
+  font-size: 36px;
+  color: var(--accent);
+  line-height: 1;
+  margin-bottom: 8px;
+}
+.ind h4 {
+  font-family: 'Fraunces', serif;
+  font-variation-settings: "opsz" 36, "wght" 400;
+  font-size: 22px;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+}
+.ind p {
+  font-size: 14px;
+  line-height: 1.55;
+  color: var(--ink-soft);
+}
+
+/* ─── Process / Formats ─────────────────────────────────────── */
+.process {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  border-top: 2px solid var(--ink);
+  border-bottom: 1px solid var(--rule);
+}
+@media (max-width: 900px) { .process { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 500px) { .process { grid-template-columns: 1fr; } }
+
+.proc-step {
+  padding: 40px 32px 40px 0;
+  border-right: 1px solid var(--rule);
+  position: relative;
+}
+.proc-step:last-child { border-right: none; }
+@media (max-width: 900px) { .proc-step:nth-child(2n) { border-right: none; } }
+
+.proc-step .step-num {
+  font-family: 'Fraunces', serif;
+  font-variation-settings: "opsz" 144, "wght" 320;
+  font-size: 64px;
+  line-height: 1;
+  color: var(--accent);
+  margin-bottom: 28px;
+}
+.proc-step h4 {
+  font-family: 'Fraunces', serif;
+  font-variation-settings: "opsz" 36, "wght" 400;
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: var(--ink);
+}
+.proc-step p {
+  font-size: 14px;
+  line-height: 1.55;
+  color: var(--mute);
+}
+
+/* ─── Partners ──────────────────────────────────────────────── */
+.partners {
+  padding: 100px 0;
+  background: var(--paper-warm);
+}
+.partners-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+  margin-top: 40px;
+}
+@media (max-width: 900px) { .partners-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 500px) { .partners-grid { grid-template-columns: repeat(2, 1fr); } }
+
+.partner {
+  padding: 36px 18px;
+  text-align: center;
+  font-family: 'Fraunces', serif;
+  font-variation-settings: "opsz" 24, "wght" 380;
+  font-size: 16px;
+  letter-spacing: -0.005em;
+  color: var(--ink);
+  border-right: 1px solid var(--rule);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 110px;
+}
+.partner:last-child { border-right: none; }
+
+/* ─── Contact / CTA ─────────────────────────────────────────── */
+.contact {
+  background: var(--ink);
+  color: var(--paper);
+  padding: 160px 0 80px;
+  position: relative;
+  overflow: hidden;
+}
+.contact-headline {
+  font-family: 'Fraunces', serif;
+  font-variation-settings: "opsz" 144, "SOFT" 80, "wght" 280;
+  font-size: clamp(56px, 9vw, 144px);
+  line-height: 0.92;
+  letter-spacing: -0.045em;
+  color: var(--paper);
+}
+.contact-headline em {
+  font-style: italic;
+  color: var(--accent);
+  font-variation-settings: "opsz" 144, "SOFT" 100;
+}
+.contact-meta {
+  margin-top: 60px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 60px;
+  padding-top: 40px;
+  border-top: 1px solid rgba(244,239,230,0.18);
+}
+@media (max-width: 800px) { .contact-meta { grid-template-columns: 1fr; gap: 32px; } }
+.contact-meta .label { color: rgba(244,239,230,0.45); margin-bottom: 12px; }
+.contact-meta a, .contact-meta p {
+  font-family: 'Fraunces', serif;
+  font-variation-settings: "opsz" 36, "wght" 380;
+  font-size: 24px;
+  color: var(--paper);
+  text-decoration: none;
+  transition: color 0.25s ease;
+  letter-spacing: -0.01em;
+}
+.contact-meta a:hover { color: var(--accent); }
+
+.contact-cta-row {
+  margin-top: 70px;
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.contact .btn {
+  color: var(--paper);
+  border-color: rgba(244,239,230,0.4);
+}
+.contact .btn--solid {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--ink);
+}
+.contact .btn--solid:hover {
+  background: var(--paper);
+  color: var(--ink);
+}
+.contact .btn--ghost:hover {
+  background: var(--paper);
+  color: var(--ink);
+  border-color: var(--paper);
+}
+
+footer {
+  background: var(--ink);
+  padding: 50px 0 40px;
+  border-top: 1px solid rgba(244,239,230,0.12);
+  color: rgba(244,239,230,0.5);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+footer .wrap-w {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+/* ─── Reveal animations ─────────────────────────────────────── */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.9s cubic-bezier(.2,.7,.2,1),
+              transform 0.9s cubic-bezier(.2,.7,.2,1);
+}
+.reveal.in {
+  opacity: 1;
+  transform: translateY(0);
+}
+.reveal-delay-1 { transition-delay: 0.08s; }
+.reveal-delay-2 { transition-delay: 0.16s; }
+.reveal-delay-3 { transition-delay: 0.24s; }
+.reveal-delay-4 { transition-delay: 0.32s; }
+
+/* ─── Decorative ornaments ──────────────────────────────────── */
+.ornament {
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  color: var(--accent);
+  font-size: 28px;
+  display: inline-block;
+  margin: 0 10px;
+  font-variation-settings: "opsz" 60, "SOFT" 100;
+}
+
+/* small responsive tweaks */
+@media (max-width: 720px) {
+  .wrap, .wrap-w { padding: 0 22px; }
+  section { padding: 90px 0; }
+  nav { padding: 14px 22px; }
+  .hero { padding: 130px 0 70px; }
+  .hero-meta { flex-direction: column; gap: 18px; align-items: flex-start; margin-bottom: 40px; }
+  .hero-meta .label-set { gap: 18px; }
+  .stats-strip { margin-top: 60px; }
+  .stat-cell { padding: 24px 0; }
+  .profile { padding: 100px 0; }
+  .scholarship { padding: 100px 0; }
+  .contact { padding: 100px 0 50px; }
+  .section-head { margin-bottom: 60px; }
+  .method { padding: 100px 0; }
+  .profile-stat .num { font-size: 56px; }
+  .profile-stat { padding: 26px 20px; }
+}
+
+/* ─── University section ─────────────────────────────────────── */
+.uni { background: var(--paper-warm); }
+.uni-programs {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--rule);
+  border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+}
+@media (max-width: 900px) { .uni-programs { grid-template-columns: 1fr; } }
+.uni-prog {
+  background: var(--paper);
+  padding: 34px 30px 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  min-height: 210px;
+  position: relative;
+  border-top: 2px solid var(--ink);
+  transition: background 0.35s ease;
+}
+.uni-prog::before {
+  content: '';
+  position: absolute;
+  top: -2px; left: 0;
+  width: 0; height: 2px;
+  background: var(--accent);
+  transition: width 0.45s cubic-bezier(.2,.7,.2,1);
+}
+.uni-prog:hover::before { width: 100%; }
+.uni-prog:hover { background: #fff; }
+.uni-prog .pnum {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.15em;
+  color: var(--accent);
+  margin-bottom: 4px;
+}
+.uni-prog h4 {
+  font-family: 'Fraunces', serif;
+  font-variation-settings: "opsz" 36, "wght" 400;
+  font-size: 21px;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+}
+.uni-prog p {
+  font-size: 14px;
+  line-height: 1.55;
+  color: var(--ink-soft);
+}
+
+/* Cases */
+.cases-wrap { margin-top: 80px; }
+.cases-wrap .label { margin-bottom: 26px; }
+.cases-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
+@media (max-width: 800px) { .cases-grid { grid-template-columns: 1fr; } }
+.case-card {
+  border: 1px solid var(--rule);
+  border-top: 3px solid var(--accent);
+  background: var(--paper);
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+}
+.case-card .case-sector {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10.5px; letter-spacing: 0.15em; text-transform: uppercase;
+  color: var(--accent); margin-bottom: 18px;
+}
+.case-card h4 {
+  font-family: 'Fraunces', serif;
+  font-variation-settings: "opsz" 60, "SOFT" 60, "wght" 360;
+  font-size: 27px; line-height: 1.1; letter-spacing: -0.02em;
+  color: var(--ink); margin-bottom: 22px;
+}
+.case-block { margin-bottom: 16px; }
+.case-block .cb-lbl {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--mute); margin-bottom: 5px;
+}
+.case-block .cb-txt { font-size: 14px; line-height: 1.55; color: var(--ink-soft); }
+.case-result {
+  margin-top: auto; padding-top: 20px; border-top: 1px solid var(--rule);
+}
+.case-result .cb-lbl { color: var(--accent); }
+.case-result ul { list-style: none; margin-top: 8px; }
+.case-result li {
+  font-size: 14px; line-height: 1.5; color: var(--ink); padding: 4px 0 4px 18px; position: relative;
+}
+.case-result li::before { content: '→'; position: absolute; left: 0; color: var(--accent); }
+
+/* Hero signature teaser */
+.hero-teaser {
+  border: 1px solid var(--rule);
+  border-left: 3px solid var(--accent);
+  background: var(--paper-warm);
+  text-decoration: none;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+.hero-teaser:hover { background: #fff; transform: translateX(3px); }
+.hero-teaser .ht-tag {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase;
+  color: var(--accent); white-space: nowrap; flex-shrink: 0;
+}
+.hero-teaser .ht-txt { font-size: 15px; line-height: 1.45; color: var(--ink-soft); }
+.hero-teaser .ht-txt em { font-style: italic; color: var(--ink); font-weight: 500; }
+.hero-teaser .ht-arr {
+  font-family: 'Fraunces', serif; font-size: 22px; color: var(--accent);
+  flex-shrink: 0; transition: transform 0.3s ease;
+}
+.hero-teaser:hover .ht-arr { transform: translateX(4px); }
+@media (max-width: 700px) { .hero-teaser { flex-direction: column; align-items: flex-start; gap: 10px; } .hero-teaser .ht-arr { display:none; } }
+
+/* About / identity */
+.about { padding: 130px 0; }
+.about-grid {
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
+  gap: 70px;
+  align-items: center;
+}
+.about-grid > * { min-width: 0; }
+@media (max-width: 900px) { .about-grid { grid-template-columns: 1fr; gap: 36px; } }
+.about-photo {
+  position: relative;
+}
+.about-photo img {
+  width: 100%;
+  height: auto;
+  display: block;
+  filter: grayscale(8%);
+}
+.about-photo .photo-frame {
+  position: relative;
+  border: 1px solid var(--rule);
+  background: var(--paper-warm);
+  padding: 14px;
+}
+.about-photo .photo-frame::after {
+  content: '';
+  position: absolute;
+  left: 14px; right: 14px; bottom: 14px;
+  height: 4px;
+  background: var(--accent);
+}
+.about-id { }
+.about-id .id-logo {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 26px;
+}
+.about-id .id-logo svg { width: 64px; height: 40px; flex-shrink: 0; }
+.about-id .id-logo .id-logo-txt {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent-deep);
+}
+.about-id h2 {
+  font-family: 'Fraunces', serif;
+  font-variation-settings: "opsz" 144, "SOFT" 60, "wght" 340;
+  font-size: clamp(34px, 4.6vw, 60px);
+  line-height: 1.0;
+  letter-spacing: -0.035em;
+  color: var(--ink);
+  margin-bottom: 10px;
+}
+.about-id .id-roles {
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--ink-soft);
+  margin-bottom: 28px;
+  max-width: 50ch;
+}
+.about-id .id-roles b { color: var(--ink); font-weight: 600; }
+.about-id .id-quote {
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  font-variation-settings: "opsz" 40, "SOFT" 100, "wght" 350;
+  font-size: 19px;
+  line-height: 1.5;
+  color: var(--ink);
+  border-left: 2px solid var(--accent);
+  padding-left: 22px;
+  margin-bottom: 32px;
+  max-width: 54ch;
+}
+.about-id .id-cta { display: flex; gap: 14px; flex-wrap: wrap; }
+
+/* Methodologies & RCIS deposits */
+.methods {
+  margin-top: 90px;
+  padding-top: 50px;
+  border-top: 1px solid var(--rule);
+}
+.methods .meth-head {
+  display: grid;
+  grid-template-columns: 1fr 1.7fr;
+  gap: 60px;
+  align-items: end;
+  margin-bottom: 36px;
+}
+@media (max-width: 900px) { .methods .meth-head { grid-template-columns: 1fr; gap: 18px; } }
+.methods h3 {
+  font-family: 'Fraunces', serif;
+  font-variation-settings: "opsz" 80, "SOFT" 60, "wght" 340;
+  font-size: clamp(28px, 3.6vw, 44px);
+  line-height: 1.03;
+  letter-spacing: -0.03em;
+  color: var(--ink);
+}
+.methods h3 em { font-style: italic; color: var(--accent); }
+.methods .meth-lede {
+  font-size: 15px; line-height: 1.6; color: var(--ink-soft); max-width: 56ch;
+}
+.meth-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+.meth-card { min-width: 0; }
+@media (max-width: 900px) { .meth-grid { grid-template-columns: 1fr; } }
+.meth-card {
+  background: var(--paper);
+  border: 1px solid var(--rule);
+  border-top: 3px solid var(--accent);
+  padding: 32px 30px 26px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+.meth-card .mc-tag {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10.5px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--accent-deep);
+  margin-bottom: 14px;
+}
+.meth-card .mc-tag .mc-seal {
+  width: 8px; height: 8px; background: var(--accent); border-radius: 50%; display: inline-block;
+}
+.meth-card h4 {
+  font-family: 'Fraunces', serif;
+  font-variation-settings: "opsz" 50, "SOFT" 60, "wght" 360;
+  font-size: 22px; line-height: 1.2; letter-spacing: -0.015em;
+  color: var(--ink); margin-bottom: 10px;
+}
+.meth-card .mc-full {
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  font-size: 13px; line-height: 1.5; color: var(--mute);
+  padding: 12px 0; margin-bottom: 8px;
+  border-top: 1px dashed var(--rule);
+  border-bottom: 1px dashed var(--rule);
+}
+.meth-card .mc-meta { margin-top: 6px; }
+.meth-card .mc-meta-row {
+  display: grid; grid-template-columns: 90px 1fr;
+  padding: 7px 0;
+  border-bottom: 1px solid var(--rule);
+  font-size: 12.5px; line-height: 1.5;
+}
+.meth-card .mc-meta-row:last-child { border-bottom: none; }
+.meth-card .mc-meta-row .k {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10.5px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--mute);
+}
+.meth-card .mc-meta-row .v { color: var(--ink); }
+.meth-card .mc-meta-row .v.mono {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10.5px; letter-spacing: 0; word-break: break-all; color: var(--ink-soft);
+}
+.meth-card .mc-foot {
+  margin-top: 16px; padding-top: 14px;
+  border-top: 1px solid var(--rule);
+  display: flex; align-items: center; justify-content: space-between; gap: 10px;
+}
+.meth-card .mc-foot .mc-source {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent-deep);
+}
+.meth-card .mc-foot .mc-num {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px; color: var(--ink);
+}
+.methods .rcis-note {
+  margin-top: 26px; padding: 18px 24px;
+  border-left: 2px solid var(--accent);
+  background: rgba(184,118,62,0.05);
+  font-size: 13px; line-height: 1.6; color: var(--ink-soft);
+}
+
+/* Activity & affiliations */
+.activity {
+  margin-top: 80px;
+  padding-top: 50px;
+  border-top: 1px solid var(--rule);
+}
+.activity .act-head {
+  display: grid;
+  grid-template-columns: 1fr 1.7fr;
+  gap: 60px;
+  align-items: end;
+  margin-bottom: 36px;
+}
+@media (max-width: 900px) { .activity .act-head { grid-template-columns: 1fr; gap: 18px; } }
+.activity h3 {
+  font-family: 'Fraunces', serif;
+  font-variation-settings: "opsz" 80, "SOFT" 60, "wght" 340;
+  font-size: clamp(28px, 3.6vw, 44px);
+  line-height: 1.03;
+  letter-spacing: -0.03em;
+  color: var(--ink);
+}
+.activity h3 em { font-style: italic; color: var(--accent); }
+.activity .act-lede {
+  font-size: 15px; line-height: 1.6; color: var(--ink-soft); max-width: 58ch;
+}
+.act-cols {
+  display: block;
+}
+.act-col {
+  padding: 36px 0 4px;
+  border-top: 1px solid var(--rule);
+}
+.act-col:first-child {
+  border-top: none;
+  padding-top: 8px;
+}
+.act-col + .act-col { margin-top: 12px; }
+.act-col h4 {
+  font-family: 'Fraunces', serif;
+  font-variation-settings: "opsz" 36, "wght" 400;
+  font-size: 22px;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+  margin-bottom: 6px;
+  padding-bottom: 0;
+  border-bottom: none;
+}
+.act-col .act-tag {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10.5px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--accent-deep);
+  margin-bottom: 22px;
+  display: block;
+}
+.act-col ul {
+  list-style: none;
+  border-top: 2px solid var(--ink);
+}
+.act-col li {
+  position: relative;
+  padding: 14px 0 14px 24px;
+  border-bottom: 1px solid var(--rule);
+  font-size: 14.5px;
+  line-height: 1.5;
+  color: var(--ink-soft);
+  break-inside: avoid;
+}
+.act-col li:last-child { border-bottom: none; }
+.act-col li::before {
+  content: '→';
+  font-family: 'Fraunces', serif;
+  color: var(--accent);
+  font-size: 16px;
+  line-height: 1.5;
+  position: absolute;
+  left: 0;
+  top: 14px;
+}
+.act-col li b { color: var(--ink); font-weight: 600; }
+.act-col li b { color: var(--ink); font-weight: 600; }
+
+/* Programs catalogue */
+.programs { background: var(--paper-warm); }
+.prog-group { margin-bottom: 56px; }
+.prog-group:last-child { margin-bottom: 0; }
+.prog-group .pg-title {
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+  border-bottom: 2px solid var(--ink);
+  padding-bottom: 16px;
+  margin-bottom: 8px;
+}
+.prog-group .pg-title h3 {
+  font-family: 'Fraunces', serif;
+  font-variation-settings: "opsz" 60, "SOFT" 50, "wght" 360;
+  font-size: 26px;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+}
+.prog-group .pg-title .pg-tag {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent-deep);
+}
+.prog-list { display: grid; grid-template-columns: 1fr 1fr; gap: 0; }
+@media (max-width: 700px) { .prog-list { grid-template-columns: 1fr; } }
+.prog-item {
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+  padding: 16px 24px 16px 0;
+  border-bottom: 1px solid var(--rule);
+}
+.prog-item .pi-num {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px; color: var(--accent); flex-shrink: 0; min-width: 26px;
+}
+.prog-item .pi-name { font-size: 15px; line-height: 1.45; color: var(--ink); }
+.prog-item .pi-flag {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--accent-deep); border: 1px solid var(--accent); padding: 2px 7px; margin-left: 6px; white-space: nowrap;
+}
+.programs-note {
+  margin-top: 50px; padding: 26px 30px;
+  border-left: 2px solid var(--accent);
+  background: rgba(184,118,62,0.06);
+  font-size: 14px; line-height: 1.6; color: var(--ink-soft);
+}
+
+/* Business value section */
+.biz-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--rule);
+  border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+}
+@media (max-width: 900px) { .biz-grid { grid-template-columns: 1fr; } }
+.biz-card {
+  background: var(--paper);
+  padding: 34px 30px 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-height: 230px;
+  position: relative;
+  border-top: 2px solid var(--ink);
+  transition: background 0.35s ease;
+}
+.biz-card::before {
+  content: '';
+  position: absolute;
+  top: -2px; left: 0; width: 0; height: 2px;
+  background: var(--accent);
+  transition: width 0.45s cubic-bezier(.2,.7,.2,1);
+}
+.biz-card:hover::before { width: 100%; }
+.biz-card:hover { background: #fff; }
+.biz-card .bnum {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px; letter-spacing: 0.15em; color: var(--accent); margin-bottom: 2px;
+}
+.biz-card h4 {
+  font-family: 'Fraunces', serif;
+  font-variation-settings: "opsz" 36, "wght" 400;
+  font-size: 20px; letter-spacing: -0.01em; color: var(--ink);
+}
+.biz-card .biz-get {
+  font-size: 14px; line-height: 1.55; color: var(--ink-soft);
+}
+.biz-card .biz-get b { color: var(--ink); font-weight: 600; }
+
+/* University highlights strip */
+.uni-highlights {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border-top: 2px solid var(--ink);
+  border-bottom: 1px solid var(--rule);
+  margin-bottom: 30px;
+}
+@media (max-width: 800px) { .uni-highlights { grid-template-columns: 1fr; } }
+.uni-hl {
+  padding: 30px 28px 30px 0;
+  border-right: 1px solid var(--rule);
+  display: flex;
+  align-items: baseline;
+  gap: 18px;
+}
+.uni-hl:last-child { border-right: none; }
+@media (max-width: 800px) { .uni-hl { border-right: none; border-bottom: 1px solid var(--rule); padding: 24px 0; } .uni-hl:last-child { border-bottom: none; } }
+.uni-hl .hl-num {
+  font-family: 'Fraunces', serif;
+  font-variation-settings: "opsz" 60, "SOFT" 60, "wght" 320;
+  font-size: 40px;
+  line-height: 0.9;
+  letter-spacing: -0.03em;
+  color: var(--accent);
+  flex-shrink: 0;
+}
+.uni-hl .hl-num sup { font-size: 0.45em; vertical-align: 0.5em; }
+.uni-hl .hl-txt { font-size: 13.5px; line-height: 1.45; color: var(--mute); }
+.uni-hl .hl-txt strong { display: block; color: var(--ink); font-size: 15px; font-weight: 600; margin-bottom: 4px; }
+
+/* What the university gets — dark consulting panel */
+.uni-benefits {
+  background: var(--ink);
+  color: var(--paper);
+  margin-top: 80px;
+  padding: 70px 60px;
+  position: relative;
+}
+.uni-benefits::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; height: 2px;
+  background: var(--accent);
+}
+.uni-benefits .ub-head {
+  display: grid;
+  grid-template-columns: 1fr 1.6fr;
+  gap: 60px;
+  align-items: end;
+  margin-bottom: 50px;
+}
+@media (max-width: 800px) { .uni-benefits { padding: 48px 26px; } .uni-benefits .ub-head { grid-template-columns: 1fr; gap: 18px; } }
+.uni-benefits .ub-head .label { color: rgba(244,239,230,0.5); }
+.uni-benefits h3 {
+  font-family: 'Fraunces', serif;
+  font-variation-settings: "opsz" 60, "SOFT" 60, "wght" 320;
+  font-size: clamp(28px, 3.4vw, 46px);
+  line-height: 1.02;
+  letter-spacing: -0.03em;
+  color: var(--paper);
+}
+.uni-benefits h3 em { font-style: italic; color: var(--accent); }
+.ub-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  border-top: 1px solid rgba(244,239,230,0.18);
+}
+@media (max-width: 700px) { .ub-grid { grid-template-columns: 1fr; } }
+.ub-item {
+  display: flex;
+  gap: 22px;
+  padding: 28px 30px 28px 0;
+  border-bottom: 1px solid rgba(244,239,230,0.14);
+  border-right: 1px solid rgba(244,239,230,0.14);
+}
+.ub-item:nth-child(2n) { border-right: none; padding-right: 0; padding-left: 30px; }
+@media (max-width: 700px) { .ub-item, .ub-item:nth-child(2n) { border-right: none; padding: 24px 0; } }
+.ub-item .ub-num {
+  font-family: 'Fraunces', serif;
+  font-variation-settings: "opsz" 60, "wght" 320;
+  font-size: 30px;
+  line-height: 1;
+  color: var(--accent);
+  flex-shrink: 0;
+  min-width: 44px;
+}
+.ub-item p {
+  font-size: 14.5px;
+  line-height: 1.5;
+  color: rgba(244,239,230,0.82);
+}
+
+/* Academic partners inside section */
+.uni-partners { margin-top: 80px; }
+.uni-partners .label { margin-bottom: 24px; }
+.uni-partners-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border-top: 2px solid var(--ink);
+  border-bottom: 1px solid var(--rule);
+}
+@media (max-width: 700px) { .uni-partners-grid { grid-template-columns: repeat(2, 1fr); } }
+.uni-partner {
+  padding: 32px 20px;
+  border-right: 1px solid var(--rule);
+  font-family: 'Fraunces', serif;
+  font-variation-settings: "opsz" 28, "wght" 400;
+  font-size: 18px;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-height: 96px;
+  justify-content: center;
+}
+.uni-partner:last-child { border-right: none; }
+@media (max-width: 700px) { .uni-partner:nth-child(2n) { border-right: none; } }
+.uni-partner span {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--mute);
+}
+.uni-services {
+  border-top: 2px solid var(--ink);
+  margin-top: 80px;
+}
+.uni-srv-row {
+  display: grid;
+  grid-template-columns: 70px 1.3fr 2fr;
+  gap: 36px;
+  padding: 30px 0;
+  border-bottom: 1px solid var(--rule);
+  align-items: start;
+}
+@media (max-width: 900px) {
+  .uni-srv-row { grid-template-columns: 50px 1fr; gap: 16px; }
+  .uni-srv-row .srv-desc { grid-column: 2; }
+}
+.uni-srv-row .srv-num {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 13px;
+  color: var(--mute);
+  padding-top: 5px;
+}
+.uni-srv-row .srv-title {
+  font-family: 'Fraunces', serif;
+  font-variation-settings: "opsz" 40, "wght" 400;
+  font-size: 22px;
+  letter-spacing: -0.015em;
+  color: var(--ink);
+}
+.uni-srv-row .srv-title em { font-style: italic; color: var(--accent); }
+.uni-srv-row .srv-desc {
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--ink-soft);
+  padding-top: 4px;
+}
+</style>
+</head>
+<body>
+
+<!-- ─── NAV ─────────────────────────────────────────────────── -->
+<nav>
+  <a class="brand" href="#top" aria-label="Олег Омельченко — на главную">
+    <svg class="mark" viewBox="0 0 400 240" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <defs><clipPath id="navMark"><circle cx="150" cy="120" r="92"/></clipPath></defs>
+      <g clip-path="url(#navMark)"><circle cx="250" cy="120" r="92" fill="#b8763e"/></g>
+      <circle cx="150" cy="120" r="92" fill="none" stroke="#11151c" stroke-width="14"/>
+      <circle cx="250" cy="120" r="92" fill="none" stroke="#11151c" stroke-width="14"/>
+    </svg>
+    <span>Олег <em>Омельченко</em></span>
+  </a>
+  <ul>
+    <li><a href="#about">Об авторе</a></li>
+    <li><a href="#services">Услуги</a></li>
+    <li><a href="#programs">Программы</a></li>
+    <li><a href="#method">Методология</a></li>
+    <li><a href="#scholarship">Наука</a></li>
+  </ul>
+  <div class="nav-actions">
+    <a href="#universities" class="nav-cta nav-cta--accent">Вузам →</a>
+    <a href="#business" class="nav-cta nav-cta--accent">Бизнесу →</a>
+  </div>
+</nav>
+
+<!-- ─── HERO ────────────────────────────────────────────────── -->
+<header class="hero" id="top">
+  <div class="wrap-w">
+    <div class="hero-meta reveal">
+      <div class="label-set">
+        <span class="label">Стратегия · Образование · Трансфер технологий</span>
+      </div>
+      <span class="label">EST · MMXXVI · Москва</span>
+    </div>
+
+    <h1 class="reveal reveal-delay-1">
+      Стратегия, <span class="ital">образование</span><br/>
+      и трансфер <span class="small-cap">технологий.</span>
+    </h1>
+
+    <div class="hero-sub">
+      <p class="reveal reveal-delay-2">
+        Стратегический консалтинг, обучение руководителей и аналитическая поддержка решений — для&nbsp;бизнеса и&nbsp;университетов. Отраслевая глубина — производство продуктов питания, FMCG-каналы, R&amp;D и коммерциализация разработок.
+      </p>
+      <div class="hero-cta-row reveal reveal-delay-3">
+        <a href="#contact" class="btn btn--solid">
+          <span>Обсудить проект</span>
+          <span class="arrow">→</span>
+        </a>
+        <a href="#universities" class="btn btn--accent">
+          <span>Для университетов</span>
+          <span class="arrow">→</span>
+        </a>
+        <a href="#business" class="btn btn--accent">
+          <span>Для бизнеса</span>
+          <span class="arrow">→</span>
+        </a>
+      </div>
+    </div>
+
+    <a href="#business" class="hero-teaser reveal reveal-delay-3">
+      <span class="ht-tag">Фирменный формат</span>
+      <span class="ht-txt">Хакатоны и стратегические сессии <em>на площадке университета</em> — с привлечением студентов: свежие идеи, доступ к R&amp;D и кадровый резерв для бизнеса.</span>
+      <span class="ht-arr">→</span>
+    </a>
+
+    <div class="stats-strip reveal reveal-delay-4">
+      <div class="stat-cell">
+        <div class="label">01 — Практика</div>
+        <div class="num">23<sup>+</sup></div>
+        <div class="stat-line">
+          <strong>лет в FMCG</strong>
+          от менеджера до CEO
+        </div>
+      </div>
+      <div class="stat-cell">
+        <div class="label">02 — Руководство</div>
+        <div class="num">15<sup>+</sup></div>
+        <div class="stat-line">
+          <strong>лет CEO / CFO</strong>
+          в группах компаний по производству продуктов питания
+        </div>
+      </div>
+      <div class="stat-cell">
+        <div class="label">03 — Направления</div>
+        <div class="num">6</div>
+        <div class="stat-line">
+          <strong>сегментов FMCG</strong>
+          межкатегорийная экспертиза
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ─── MARQUEE ─────────────────────────────────────────────── -->
+<div class="marquee">
+  <div class="marquee-track">
+    <span>Производители</span>
+    <span>Дистрибьюторы</span>
+    <span>Ритейл</span>
+    <span>Бренды</span>
+    <span>Категорийный менеджмент</span>
+    <span>Международные поставки</span>
+    <span>Производители</span>
+    <span>Дистрибьюторы</span>
+    <span>Ритейл</span>
+    <span>Бренды</span>
+    <span>Категорийный менеджмент</span>
+    <span>Международные поставки</span>
+  </div>
+</div>
+
+
+<!-- ─── ABOUT / IDENTITY ───────────────────────────────────── -->
+<section class="about" id="about">
+  <div class="wrap">
+    <div class="about-grid">
+      <div class="about-photo reveal">
+        <div class="photo-frame">
+          <img src="data:image/jpeg;base64,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" alt="Омельченко Олег Михайлович" />
+        </div>
+      </div>
+      <div class="about-id reveal reveal-delay-1">
+        <div class="id-logo">
+          <svg viewBox="0 0 400 240" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <defs><clipPath id="aboutMark"><circle cx="150" cy="120" r="92"/></clipPath></defs>
+            <g clip-path="url(#aboutMark)"><circle cx="250" cy="120" r="92" fill="#b8763e"/></g>
+            <circle cx="150" cy="120" r="92" fill="none" stroke="#11151c" stroke-width="14"/>
+            <circle cx="250" cy="120" r="92" fill="none" stroke="#11151c" stroke-width="14"/>
+          </svg>
+          <span class="id-logo-txt">Об авторе</span>
+        </div>
+        <h2>Омельченко<br/>Олег Михайлович</h2>
+        <p class="id-roles">
+          <b>Кандидат экономических наук, доцент.</b> Более 23 лет управленческого опыта в реальном секторе, включая руководство многопрофильными группами компаний по производству продуктов питания — от производственного контура до корпоративного управления группой. Параллельно — более 15 лет в высшем образовании: доцент РЭУ им. Г.В. Плеханова и НИТУ МИСИС, директор Центра коммерциализации и трансфера технологий РОСБИОТЕХ, профессионал трансфера технологий (ПТТ), член Совета по развитию биотехнологий Минпромторга РФ.
+        </p>
+        <blockquote class="id-quote">
+          «Сочетание длительного руководства группами компаний с действующей научной степенью и академической работой — редкость для российской практики. Все методологии, которые я применяю в консалтинге и преподавании, разработаны и внедрены в ходе моего руководства компаниями, описаны в монографиях и задепонированы в РЦИС.РФ.»
+        </blockquote>
+        <div class="id-cta">
+          <a href="#universities" class="btn btn--accent"><span>Для университетов</span><span class="arrow">&#8594;</span></a>
+          <a href="#business" class="btn btn--accent"><span>Для бизнеса</span><span class="arrow">&#8594;</span></a>
+          <a href="#contact" class="btn btn--ghost"><span>Связаться</span></a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Methodologies & RCIS deposits -->
+    <div class="methods reveal">
+      <div class="meth-head">
+        <div>
+          <div class="eyebrow">Авторские методологии</div>
+        </div>
+        <div>
+          <h3>Депонировано <em>в РЦИС.РФ</em> — государственный блокчейн-реестр</h3>
+          <p class="meth-lede">
+            Авторские методологии Олега Омельченко зарегистрированы в общественно-государственной блокчейн-инфраструктуре РЦИС.РФ — узлы реестра включают Роспатент, Суд по интеллектуальным правам, Фонд «Сколково» и Минобрнауки. Каждое свидетельство подтверждает авторство и права на дату регистрации.
+          </p>
+        </div>
+      </div>
+
+      <div class="meth-grid">
+        <div class="meth-card">
+          <div class="mc-tag"><span class="mc-seal"></span>Методология · 2026</div>
+          <h4>Управление интегрированными корпоративными образованиями в промышленности</h4>
+          <div class="mc-full">
+            Методология управления интегрированными корпоративными образованиями в промышленности: теоретические основы, инструментарий и практика применения авторской методологии управления ИКО в условиях цифровой трансформации.
+          </div>
+          <div class="mc-meta">
+            <div class="mc-meta-row"><span class="k">Свидетельство</span><span class="v">№ 1778-331-766</span></div>
+            <div class="mc-meta-row"><span class="k">Тип</span><span class="v">Монография · Издание</span></div>
+            <div class="mc-meta-row"><span class="k">Создано</span><span class="v">01.04.2026</span></div>
+            <div class="mc-meta-row"><span class="k">Зарегистр.</span><span class="v">22.04.2026 14:05 (MSK)</span></div>
+            <div class="mc-meta-row"><span class="k">Хэш файла</span><span class="v mono">5db795f1e3482547f16e90bf643aafd224c9a933bd64102c447b100ce0007cf3</span></div>
+            <div class="mc-meta-row"><span class="k">Узел РЦИС</span><span class="v">НРИС</span></div>
+          </div>
+          <div class="mc-foot">
+            <span class="mc-source">Депонировано · РЦИС.РФ</span>
+            <span class="mc-num">100% — О.М. Омельченко</span>
+          </div>
+        </div>
+
+        <div class="meth-card">
+          <div class="mc-tag"><span class="mc-seal"></span>Методология · 2026</div>
+          <h4>Реконфигурация хлебопекарной отрасли · модель PACE / HLRM</h4>
+          <div class="mc-full">
+            Авторский комплекс методологий, моделей и диагностических инструментов управления реконфигурацией хлебопекарной отрасли России в контуре FMCG. Методология адаптивного управления компетенциями и модель скорости освоения профессиональных компетенций PACE / HLRM.
+          </div>
+          <div class="mc-meta">
+            <div class="mc-meta-row"><span class="k">Свидетельство</span><span class="v">№ 1478-277-814</span></div>
+            <div class="mc-meta-row"><span class="k">Тип</span><span class="v">Монография · Издание</span></div>
+            <div class="mc-meta-row"><span class="k">Создано</span><span class="v">21.04.2026</span></div>
+            <div class="mc-meta-row"><span class="k">Зарегистр.</span><span class="v">14.05.2026 11:44 (MSK)</span></div>
+            <div class="mc-meta-row"><span class="k">Хэш файла</span><span class="v mono">2787a993acb6119ec3635ac90ce06bf30a0cdf544e13ac27c5cfaec4feafbd8d</span></div>
+            <div class="mc-meta-row"><span class="k">Узел РЦИС</span><span class="v">НРИС</span></div>
+          </div>
+          <div class="mc-foot">
+            <span class="mc-source">Депонировано · РЦИС.РФ</span>
+            <span class="mc-num">100% — О.М. Омельченко</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="rcis-note">
+        <b>Что такое РЦИС.РФ.</b> Российский центр оборота прав на результаты творческой деятельности — общественно-государственная блокчейн-инфраструктура, объединяющая Роспатент, Суд по интеллектуальным правам, Фонд «Сколково», Минобрнауки, Минцифры, Минкультуры и ведущие технологические компании. Свидетельство РЦИС подтверждает авторство и права на интеллектуальную собственность в государственном цифровом реестре (Указ Президента РФ № 378 от 28.06.2021).
+      </div>
+    </div>
+
+    <!-- Activity & affiliations -->
+    <div class="activity reveal">
+      <div class="act-head">
+        <div>
+          <div class="eyebrow">Деятельность</div>
+        </div>
+        <div>
+          <h3>Академическая, отраслевая <em>и международная</em> практика</h3>
+          <p class="act-lede">
+            Параллельная работа в реальном секторе, в высшей школе и на международных площадках. Преподавание и научное руководство сочетаются с участием в отраслевых конференциях и проектах развития делового образования в России и за рубежом.
+          </p>
+        </div>
+      </div>
+
+      <div class="act-cols">
+        <div class="act-col">
+          <h4>Академическая и публичная деятельность</h4>
+          <span class="act-tag">Россия · вузы · отраслевые площадки</span>
+          <ul>
+            <li><b>Учёное звание доцента и научная степень к.э.н.</b> — действующее преподавание более 15 лет.</li>
+            <li>Доцент <b>РЭУ им. Г.В. Плеханова</b> и <b>НИТУ МИСИС</b>.</li>
+            <li><b>Директор</b> Центра коммерциализации и трансфера технологий <b>РОСБИОТЕХ</b>.</li>
+            <li>Шеф-редактор научного журнала <b>«Хлебопечение России»</b>.</li>
+            <li>Модератор отраслевой конференции <b>«Биоэкономика»</b> (РЭУ им. Г.В. Плеханова).</li>
+            <li>Спикер конференций <b>НИУ ВШЭ</b>, <b>ТПП РФ</b>, отраслевых союзов и государственных площадок.</li>
+            <li>Член <b>Российского союза пекарей</b>, <b>Ассоциации стратегического управления</b>, <b>Союза разработчиков, производителей и дистрибьюторов специализированных и функциональных пищевых продуктов</b> и других профессиональных объединений.</li>
+          </ul>
+        </div>
+
+        <div class="act-col">
+          <h4>Международная деятельность</h4>
+          <span class="act-tag">Африка · ЕврАзЭС · образовательные программы</span>
+          <ul>
+            <li>Модератор секций конференции <b>Россотрудничества в Эфиопии</b>.</li>
+            <li>Реализация авторских образовательных программ в <b>РОСБИОТЕХ</b>, <b>РЭУ им. Плеханова</b> и в <b>странах Африки</b>.</li>
+            <li>Участие в открытии центров бизнес-образования в <b>Намибии, ЮАР, Ботсване и Зимбабве</b>.</li>
+            <li>Спикер бизнес-конференций в Намибии, ЮАР, Ботсване и Зимбабве.</li>
+            <li>Реализация международных грантовых программ <b>Африка–ЕврАзЭС</b>.</li>
+            <li>Опыт работы на FMCG-рынках России, <b>ЮАР</b> и <b>Азии</b>.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── SERVICES ────────────────────────────────────────────── -->
+<section id="services">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="left">
+        <div class="eyebrow reveal">Возможности</div>
+        <div class="num-tag reveal reveal-delay-1">§ 01 / 06</div>
+      </div>
+      <div class="right">
+        <h2 class="reveal">Услуги <em>по</em> стратегии, образованию и трансферу технологий.</h2>
+        <p class="lede reveal reveal-delay-1">
+          Консалтинг, аналитика, образовательные программы и сопровождение развития FMCG-компаний. Работа строится через прямое участие Олега Омельченко на ключевых этапах: постановка задачи, разработка решений, согласование подхода и контроль качества результата.
+        </p>
+      </div>
+    </div>
+
+    <div class="services">
+      <a class="service-row reveal" href="#contact">
+        <div class="num">001</div>
+        <div class="title">Стратегический <em>консалтинг</em></div>
+        <div class="desc">Стратегии роста, диверсификации ассортимента и выхода в новые каналы сбыта для FMCG-производителей, брендов, дистрибьюторов и ритейла.</div>
+        <div class="arr">→</div>
+      </a>
+      <a class="service-row reveal" href="#contact">
+        <div class="num">002</div>
+        <div class="title">Аналитика <em>и</em> исследования</div>
+        <div class="desc">Подготовка исследований и аналитических материалов под FMCG-запрос. Российские и международные источники данных, структурированные методы анализа рынка, полки и потребительского спроса.</div>
+        <div class="arr">→</div>
+      </a>
+      <a class="service-row reveal" href="#contact">
+        <div class="num">003</div>
+        <div class="title">Корпоративное <em>образование</em></div>
+        <div class="desc">Программы для команд FMCG-компаний — от полевых и коммерческих подразделений до топ-менеджмента. Содержание адаптируется под задачи бренда, категории и уровень подготовки участников.</div>
+        <div class="arr">→</div>
+      </a>
+      <a class="service-row reveal" href="#contact">
+        <div class="num">004</div>
+        <div class="title">Программы <em>для</em> собственников <em>и</em> CEO</div>
+        <div class="desc">Закрытые программы для первых лиц FMCG-компаний. Кейс-метод, Action Learning и Socratic Dialogue в группах до 12 человек. Сопровождение 3 месяца.</div>
+        <div class="arr">→</div>
+      </a>
+      <a class="service-row reveal" href="#contact">
+        <div class="num">005</div>
+        <div class="title">Образование <em>для</em> университетов</div>
+        <div class="desc">Совместные программы, курсы повышения квалификации, гостевые лекции и конференции по управлению FMCG-брендами, категорией и потребительским поведением.</div>
+        <div class="arr">→</div>
+      </a>
+      <a class="service-row reveal" href="#contact">
+        <div class="num">006</div>
+        <div class="title">Развитие <em>FMCG</em>-брендов <em>на</em> новых рынках</div>
+        <div class="desc">Разработка и сопровождение вывода FMCG-брендов в новые регионы и каналы продаж, а также поддержка партнёров в России — от концепции до запуска.</div>
+        <div class="arr">→</div>
+      </a>
+      <a class="service-row reveal" href="#contact">
+        <div class="num">007</div>
+        <div class="title">Маркетинговые <em>стратегии</em></div>
+        <div class="desc">Позиционирование, бренд, каналы продаж и performance-маркетинг для FMCG. Интеграция онлайн- и офлайн-каналов, трейд-маркетинг и планирование на 12 месяцев.</div>
+        <div class="arr">→</div>
+      </a>
+      <a class="service-row reveal" href="#contact">
+        <div class="num">008</div>
+        <div class="title">Бизнес-<em>планирование</em></div>
+        <div class="desc">Финансовые модели на 3–5 лет, отчёты P&L, Cash Flow и анализ рисков для FMCG-инвесторов, банков и управленческих решений.</div>
+        <div class="arr">→</div>
+      </a>
+    </div>
+
+    <div class="stats-strip" style="margin-top: 80px;">
+      <div class="stat-cell">
+        <div class="label">Эксперт</div>
+        <div class="num">1</div>
+        <div class="stat-line"><strong>личное участие</strong>Олег ведёт работу сам</div>
+      </div>
+      <div class="stat-cell">
+        <div class="label">Время ответа</div>
+        <div class="num">12<sup>ч</sup></div>
+        <div class="stat-line"><strong>быстрый старт</strong>от запроса до диалога</div>
+      </div>
+      <div class="stat-cell">
+        <div class="label">Проектов с 2022</div>
+        <div class="num">50<sup>+</sup></div>
+        <div class="stat-line"><strong>реализовано</strong>для FMCG-компаний</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ─── PROGRAMS CATALOGUE ─────────────────────────────────── -->
+<section class="programs" id="programs">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="left">
+        <div class="eyebrow reveal">Готовые программы</div>
+        <div class="num-tag reveal reveal-delay-1">23 программы · 3 формата</div>
+      </div>
+      <div class="right">
+        <h2 class="reveal">Корпоративные <em>образовательные</em> программы.</h2>
+        <p class="lede reveal reveal-delay-1">
+          Авторские программы по трансферу технологий и коммерциализации инноваций — для университетов, передовых инженерных школ, центров трансфера технологий и корпораций, работающих с наукой. Форматы: очно, онлайн, выезд в регион (8–24 акад. часа, группа до 20 человек).
+        </p>
+      </div>
+    </div>
+
+    <div class="prog-group reveal">
+      <div class="pg-title">
+        <h3>Для университетов, ПИШ и ЦТТ</h3>
+        <span class="pg-tag">Ректорам · проректорам · ЦТТ</span>
+      </div>
+      <div class="prog-list">
+        <div class="prog-item"><span class="pi-num">01</span><span class="pi-name">Технологический портфель ПИШ: от разработки к рынку</span></div>
+        <div class="prog-item"><span class="pi-num">02</span><span class="pi-name">Стратегия коммерциализации для инженерной школы</span></div>
+        <div class="prog-item"><span class="pi-num">03</span><span class="pi-name">Управление инновационной командой ПИШ</span></div>
+        <div class="prog-item"><span class="pi-num">04</span><span class="pi-name">Учёный-переговорщик</span></div>
+        <div class="prog-item"><span class="pi-num">05</span><span class="pi-name">Университетская экосистема. 7 уровней и 7 шагов</span></div>
+        <div class="prog-item"><span class="pi-num">06</span><span class="pi-name">«Инновационный день» — стратегическая сессия</span></div>
+        <div class="prog-item"><span class="pi-num">07</span><span class="pi-name">Программы для руководителей (по согласованию)</span></div>
+      </div>
+    </div>
+
+    <div class="prog-group reveal">
+      <div class="pg-title">
+        <h3>Команды ЦТТ и технологические брокеры</h3>
+        <span class="pg-tag">Квалификация · ПТТ</span>
+      </div>
+      <div class="prog-list">
+        <div class="prog-item"><span class="pi-num">01</span><span class="pi-name">Сертифицированный профессионал трансфера технологий (СПТТ) <span class="pi-flag">флагман</span></span></div>
+        <div class="prog-item"><span class="pi-num">02</span><span class="pi-name">Технологический брокеридж</span></div>
+        <div class="prog-item"><span class="pi-num">03</span><span class="pi-name">Практические инструменты поиска и оценки технологий</span></div>
+        <div class="prog-item"><span class="pi-num">04</span><span class="pi-name">Оценка стоимости технологий</span></div>
+        <div class="prog-item"><span class="pi-num">05</span><span class="pi-name">Технологический аудит</span></div>
+        <div class="prog-item"><span class="pi-num">06</span><span class="pi-name">Практические вопросы управления РИД</span></div>
+        <div class="prog-item"><span class="pi-num">07</span><span class="pi-name">Трансфер технологий</span></div>
+      </div>
+    </div>
+
+    <div class="prog-group reveal">
+      <div class="pg-title">
+        <h3>Корпорации, работающие с наукой</h3>
+        <span class="pg-tag">R&amp;D · открытые инновации</span>
+      </div>
+      <div class="prog-list">
+        <div class="prog-item"><span class="pi-num">01</span><span class="pi-name">Форсайт научно-технологического развития (экспресс / курс)</span></div>
+        <div class="prog-item"><span class="pi-num">02</span><span class="pi-name">Стратегии коммерциализации</span></div>
+        <div class="prog-item"><span class="pi-num">03</span><span class="pi-name">Основы инновационной экономики</span></div>
+        <div class="prog-item"><span class="pi-num">04</span><span class="pi-name">Инновационная экономика</span></div>
+        <div class="prog-item"><span class="pi-num">05</span><span class="pi-name">Технологическое лидерство</span></div>
+        <div class="prog-item"><span class="pi-num">06</span><span class="pi-name">Коммерциализация технологических проектов на международном рынке</span></div>
+        <div class="prog-item"><span class="pi-num">07</span><span class="pi-name">Управление маркетингом и продажами B2B</span></div>
+        <div class="prog-item"><span class="pi-num">08</span><span class="pi-name">Управление научно-техническими проектами</span></div>
+        <div class="prog-item"><span class="pi-num">09</span><span class="pi-name">Практические вопросы управления РИД</span></div>
+      </div>
+    </div>
+
+    <div class="programs-note reveal">
+      Все программы адаптируются под задачи заказчика; возможно формирование индивидуального трека. Длительность, формат и стоимость — по запросу. Для подбора оптимального формата свяжитесь удобным способом или напишите в Telegram <b>@omo_education</b>.
+    </div>
+  </div>
+</section>
+
+<!-- ─── PROFILE (DARK) ─────────────────────────────────────── -->
+<section class="profile" id="profile">
+  <div class="wrap-w">
+    <div class="profile-grid">
+      <div class="profile-left">
+        <div class="eyebrow reveal">Профиль</div>
+        <h2 class="reveal reveal-delay-1">
+          Стратегия. <em>Управление.</em><br/> Образование.
+        </h2>
+        <p class="reveal reveal-delay-2" style="font-size:17px; line-height:1.65; color:rgba(244,239,230,0.78); max-width:54ch;">
+          Профессиональный профиль соединяет три плоскости: 23+ года практики на позициях уровня CEO и CFO с руководством многопрофильными группами компаний по производству продуктов питания — от производственного контура до корпоративного управления; 15+ лет работы в высшем образовании с действующим учёным званием доцента и научной степенью к.э.н.; директорство Центром трансфера технологий и международные образовательные проекты. Такая комбинация даёт сквозную экспертизу от цеха до стратегии группы и от учебной аудитории до международной сцены.
+        </p>
+
+        <blockquote class="quote reveal reveal-delay-3">
+          «Расширенная экспертиза — от производственного цеха до корпоративного контура группы и от учебной аудитории до международной сцены. Управленческие решения, образовательные программы и научные методологии — разработаны и проверены в одной руке.»
+        </blockquote>
+
+        <div class="profile-pills reveal reveal-delay-4">
+          <span class="pill accent">Центр трансфера технологий</span>
+          <span class="pill accent">Гранты: Африка · ЕврАзЭС</span>
+          <span class="pill">Группы компаний · продукты питания</span>
+          <span class="pill">Высшее образование 15+</span>
+          <span class="pill">Шеф-редактор «Хлебопечение России»</span>
+          <span class="pill">Россия · ЮАР · Азия · Африка</span>
+          <span class="pill">Наука + практика</span>
+        </div>
+      </div>
+
+      <div class="profile-stats reveal reveal-delay-2">
+        <div class="profile-stat">
+          <div class="label">Опыт</div>
+          <div class="num">23<sup>+</sup></div>
+          <div class="desc">лет в FMCG — от менеджмента до уровня CEO</div>
+        </div>
+        <div class="profile-stat">
+          <div class="label">C-level</div>
+          <div class="num">15<sup>+</sup></div>
+          <div class="desc">лет руководства группами компаний по производству продуктов питания</div>
+        </div>
+        <div class="profile-stat">
+          <div class="label">Высшее образование</div>
+          <div class="num">15<sup>+</sup></div>
+          <div class="desc">лет работы в сфере высшего образования</div>
+        </div>
+        <div class="profile-stat">
+          <div class="label">Рынки</div>
+          <div class="num">3</div>
+          <div class="desc">Россия, ЮАР, Азия — в FMCG-контексте</div>
+        </div>
+        <div class="profile-stat">
+          <div class="label">Публикации</div>
+          <div class="num">55<sup>+</sup></div>
+          <div class="desc">в рецензируемых научных изданиях</div>
+        </div>
+        <div class="profile-stat">
+          <div class="label">Монографии</div>
+          <div class="num">4</div>
+          <div class="desc">депонированы в РЦИС (блокчейн-реестр)</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── CAPABILITIES / INDUSTRIES ──────────────────────────── -->
+<section id="industries">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="left">
+        <div class="eyebrow reveal">Отрасли</div>
+        <div class="num-tag reveal reveal-delay-1">§ 03 / 06</div>
+      </div>
+      <div class="right">
+        <h2 class="reveal">Экспертиза <em>в</em> FMCG для всех звеньев цепочки.</h2>
+        <p class="lede reveal reveal-delay-1">
+          Базовая специализация — FMCG. Опыт позволяет адаптировать управленческие практики под задачи производителей, дистрибьюторов, торговых сетей и бренд-команд.
+        </p>
+      </div>
+    </div>
+
+    <div class="industries">
+      <div class="ind reveal">
+        <div class="ind-num">i.</div>
+        <h4>FMCG</h4>
+        <p>Основная специализация. Более 23 лет практики. Решения для роста продаж, расширения дистрибуции и увеличения доли рынка.</p>
+      </div>
+      <div class="ind reveal reveal-delay-1">
+        <div class="ind-num">ii.</div>
+        <h4>Категорийное управление</h4>
+        <p>Подходы к управлению ассортиментом, промо-механиками и B2B-цепочками поставок в FMCG.</p>
+      </div>
+      <div class="ind reveal reveal-delay-2">
+        <div class="ind-num">iii.</div>
+        <h4>Сырьевые цепочки</h4>
+        <p>Решения для закупок, поставок сырья и упаковки, повышения устойчивости операционной модели.</p>
+      </div>
+      <div class="ind reveal">
+        <div class="ind-num">iv.</div>
+        <h4>Производство FMCG</h4>
+        <p>Оптимизация, запуск и реконструкция производственных мощностей в интересах эффективности, качества и роста выпуска.</p>
+      </div>
+      <div class="ind reveal reveal-delay-1">
+        <div class="ind-num">v.</div>
+        <h4>Инновации в FMCG</h4>
+        <p>Трансфер технологий, развитие новых продуктов и R&amp;D-стратегии, напрямую связанные с бизнес-результатами.</p>
+      </div>
+      <div class="ind reveal reveal-delay-2">
+        <div class="ind-num">vi.</div>
+        <h4>Масштабирование</h4>
+        <p>Проекты и партнёрства на рынках России и Азии для брендов, дистрибьюторов и производителей FMCG.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── METHODOLOGY ────────────────────────────────────────── -->
+<section class="method" id="method">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="left">
+        <div class="eyebrow reveal">Методология</div>
+        <div class="num-tag reveal reveal-delay-1">§ 04 / 06</div>
+      </div>
+      <div class="right">
+        <h2 class="reveal">Подходы <em>ведущих</em> бизнес-школ.</h2>
+        <p class="lede reveal reveal-delay-1">
+          Программы и проекты опираются на методики, проверенные ведущими американскими школами и адаптированные к российскому FMCG-контексту. Каждый модуль строится вокруг прикладной задачи бизнеса.
+        </p>
+      </div>
+    </div>
+
+    <div class="method-grid">
+      <div class="method-card reveal">
+        <div class="school">Harvard Business School</div>
+        <h4>Case Method</h4>
+        <p>Каждый модуль строится вокруг прикладного кейса из FMCG-практики: запуск категории, управление ассортиментом, промо-механики и планирование продаж.</p>
+      </div>
+      <div class="method-card reveal reveal-delay-1">
+        <div class="school">MIT Sloan</div>
+        <h4>Action Learning</h4>
+        <p>Команды работают над актуальной задачей своей FMCG-компании в ходе программы. Результат — практическое решение и план внедрения.</p>
+      </div>
+      <div class="method-card reveal reveal-delay-2">
+        <div class="school">Wharton</div>
+        <h4>Peer Learning</h4>
+        <p>Обучение в малых группах с участниками из разных FMCG-направлений: бренды, дистрибьюторы и ритейл. Формат позволяет сопоставлять подходы.</p>
+      </div>
+      <div class="method-card reveal reveal-delay-3">
+        <div class="school">Kellogg</div>
+        <h4>Socratic Dialogue</h4>
+        <p>Преподаватель ведёт обсуждение через вопросы и помогает участникам сформулировать выводы самостоятельно на материале FMCG-кейсов.</p>
+      </div>
+      <div class="method-card reveal">
+        <div class="school">Stanford GSB</div>
+        <h4>Field Immersion</h4>
+        <p>Программа включает визиты в торговые сети и на объекты FMCG-цепочки, анализ финансовых показателей и интервью с практиками.</p>
+      </div>
+      <div class="method-card reveal reveal-delay-1">
+        <div class="school">McKinsey</div>
+        <h4>Multi-Lens Analysis</h4>
+        <p>Одновременное рассмотрение FMCG-задачи через несколько перспектив: потребитель, категория, канал, конкуренты, внутренние компетенции.</p>
+      </div>
+      <div class="method-card reveal reveal-delay-2">
+        <div class="school">BCG</div>
+        <h4>TSR &amp; Value Creation</h4>
+        <p>Анализ создания акционерной стоимости в FMCG-категориях. Используется для оценки баланса между ростом выручки, маржинальностью и инвестициями.</p>
+      </div>
+      <div class="method-card reveal reveal-delay-3">
+        <div class="school">Carnegie Mellon</div>
+        <h4>Cross-Disciplinary Teams</h4>
+        <p>Обучение в смешанных группах: технологи, операционные специалисты, менеджеры по качеству и логистике работают совместно.</p>
+      </div>
+    </div>
+
+    <!-- Frameworks -->
+    <div style="margin-top: 100px;">
+      <div class="label reveal" style="margin-bottom: 28px;">Стратегические фреймворки</div>
+      <div class="frameworks-list">
+        <div class="fw-item reveal">
+          <div class="fw-num">FW · 01</div>
+          <h4>MECE-структурирование</h4>
+          <p>Принцип взаимоисключающих и исчерпывающих категорий. Декомпозиция FMCG-задачи без пересечений и пропусков.</p>
+        </div>
+        <div class="fw-item reveal reveal-delay-1">
+          <div class="fw-num">FW · 02</div>
+          <h4>Issue Tree / Дерево гипотез</h4>
+          <p>Структурирование FMCG-проблемы до уровня проверяемых гипотез. Основа исследования и анализа.</p>
+        </div>
+        <div class="fw-item reveal reveal-delay-2">
+          <div class="fw-num">FW · 03</div>
+          <h4>BCG Growth-Share Matrix</h4>
+          <p>Портфельный анализ FMCG-брендов, категорий и SKU по росту и доле рынка. Приоритеты инвестиций и распределение ресурсов.</p>
+        </div>
+        <div class="fw-item reveal">
+          <div class="fw-num">FW · 04</div>
+          <h4>Porter's Five Forces</h4>
+          <p>Анализ конкурентной среды FMCG и цепочки создания стоимости. Поиск точек дифференциации и источников преимущества.</p>
+        </div>
+        <div class="fw-item reveal reveal-delay-1">
+          <div class="fw-num">FW · 05</div>
+          <h4>Scenario Planning</h4>
+          <p>Разработка нескольких сценариев развития FMCG-рынка с допущениями и триггерами. Стратегия в условиях неопределённости.</p>
+        </div>
+        <div class="fw-item reveal reveal-delay-2">
+          <div class="fw-num">FW · 06</div>
+          <h4>Econometric Modeling</h4>
+          <p>Оценка влияния цены, промо и дистрибуции на продажи FMCG-брендов. Ценообразование, промо-планирование, каналы роста.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── ANALYTICS / CAPABILITIES grid ───────────────────────── -->
+<section id="capabilities">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="left">
+        <div class="eyebrow reveal">Аналитика</div>
+        <div class="num-tag reveal reveal-delay-1">§ 05 / 06</div>
+      </div>
+      <div class="right">
+        <h2 class="reveal">Данные <em>для</em> управленческих решений.</h2>
+        <p class="lede reveal reveal-delay-1">
+          Аналитическая служба отслеживает ключевые показатели FMCG-рынка: динамику продаж, оборачиваемость, маржинальность, потребительские тренды и активность конкурентов. Это позволяет использовать данные для мониторинга рынка и поддержки решений.
+        </p>
+      </div>
+    </div>
+
+    <div class="stats-strip">
+      <div class="stat-cell">
+        <div class="label">Мониторинг</div>
+        <div class="num">200<sup>+</sup></div>
+        <div class="stat-line"><strong>компаний</strong>в базе FMCG-рынка</div>
+      </div>
+      <div class="stat-cell">
+        <div class="label">Метрики</div>
+        <div class="num">12</div>
+        <div class="stat-line"><strong>в реальном времени</strong>ключевые KPI рынка</div>
+      </div>
+      <div class="stat-cell">
+        <div class="label">Точность</div>
+        <div class="num">98<sup>%</sup></div>
+        <div class="stat-line"><strong>верифицированные источники</strong>методология и контроль</div>
+      </div>
+    </div>
+
+    <div class="capabilities-grid" style="margin-top: 80px;">
+      <div class="cap-card reveal">
+        <div class="symbol">§</div>
+        <div class="cap-num">A · 01</div>
+        <h3>Рыночные исследования</h3>
+        <p>Объём рынка, динамика, сегментация, ключевые игроки, барьеры входа и точки роста. Для стратегического планирования и оценки инвестиционных решений.</p>
+      </div>
+      <div class="cap-card reveal reveal-delay-1">
+        <div class="symbol">‡</div>
+        <div class="cap-num">A · 02</div>
+        <h3>Конкурентный анализ</h3>
+        <p>Позиционирование, ценообразование, ассортимент, промо-активность. Основа для определения рыночной стратегии и УТП бренда.</p>
+      </div>
+      <div class="cap-card reveal reveal-delay-2">
+        <div class="symbol">¶</div>
+        <div class="cap-num">A · 03</div>
+        <h3>Потребительские исследования</h3>
+        <p>Сегментация аудитории, портреты, оценка лояльности и удовлетворённости для поддержки маркетинговых и коммерческих решений.</p>
+      </div>
+      <div class="cap-card reveal">
+        <div class="symbol">†</div>
+        <div class="cap-num">A · 04</div>
+        <h3>Аналитические заключения</h3>
+        <p>Экспертные выводы по конкретным управленческим вопросам: обоснование решений, оценка рисков, сравнение сценариев.</p>
+      </div>
+      <div class="cap-card reveal reveal-delay-1">
+        <div class="symbol">◊</div>
+        <div class="cap-num">A · 05</div>
+        <h3>Perfect Store Analytics</h3>
+        <p>Доля полки, доступность и видимость бренда. Приоритизация магазинов и SKU для точечного улучшения исполнения.</p>
+      </div>
+      <div class="cap-card reveal reveal-delay-2">
+        <div class="symbol">∞</div>
+        <div class="cap-num">A · 06</div>
+        <h3>Machine Learning &amp; AI</h3>
+        <p>ML-модели для прогнозирования спроса, сегментации потребителей и оптимизации ассортимента FMCG на транзакционных данных.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── BUSINESS VALUE ─────────────────────────────────────── -->
+<section id="business">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="left">
+        <div class="eyebrow reveal">Что получает бизнес</div>
+        <div class="num-tag reveal reveal-delay-1">Результат по направлениям</div>
+      </div>
+      <div class="right">
+        <h2 class="reveal">Что <em>получает</em> бизнес от сотрудничества.</h2>
+        <p class="lede reveal reveal-delay-1">
+          По каждому направлению — измеримый результат для компании. Работа строится вокруг задач бизнеса и доводится до внедрения, а не остаётся на уровне рекомендаций.
+        </p>
+      </div>
+    </div>
+
+    <div class="biz-grid">
+      <div class="biz-card reveal">
+        <div class="bnum">B · 01 — Стратегия</div>
+        <h4>Стратегический консалтинг</h4>
+        <div class="biz-get"><b>Рост выручки и доли рынка:</b> чёткая стратегия роста, выход в новые каналы и сегменты, дорожная карта с приоритетами и метриками.</div>
+      </div>
+      <div class="biz-card reveal reveal-delay-1">
+        <div class="bnum">B · 02 — Данные</div>
+        <h4>Аналитика и исследования</h4>
+        <div class="biz-get"><b>Решения на данных:</b> снижение рисков, понимание рынка, конкурентов и потребителя, обоснованные управленческие решения вместо интуиции.</div>
+      </div>
+      <div class="biz-card reveal reveal-delay-2">
+        <div class="bnum">B · 03 — Команда</div>
+        <h4>Обучение сотрудников</h4>
+        <div class="biz-get"><b>Сильная команда:</b> рост компетенций, единые стандарты работы и готовые решения задач компании, разработанные прямо в ходе обучения.</div>
+      </div>
+      <div class="biz-card reveal">
+        <div class="bnum">B · 04 — Бренд</div>
+        <h4>Маркетинговые стратегии</h4>
+        <div class="biz-get"><b>Управляемый спрос:</b> внятное позиционирование, рост узнаваемости и лояльности, измеримый ROI по каналам продвижения.</div>
+      </div>
+      <div class="biz-card reveal reveal-delay-1">
+        <div class="bnum">B · 05 — Финансы</div>
+        <h4>Бизнес-планирование</h4>
+        <div class="biz-get"><b>Готовность к инвестициям:</b> финмодель на 3–5 лет, оценка жизнеспособности проекта, документ для переговоров с банками и инвесторами.</div>
+      </div>
+      <div class="biz-card reveal reveal-delay-2">
+        <div class="bnum">B · 06 — Рост</div>
+        <h4>Развитие на новых рынках</h4>
+        <div class="biz-get"><b>Новые рынки и партнёры:</b> выход в новые регионы и каналы, подбор партнёров и сопровождение до первых продаж.</div>
+      </div>
+      <div class="biz-card reveal">
+        <div class="bnum">B · 07 — Архитектура</div>
+        <h4>Проектирование бизнеса и процессов</h4>
+        <div class="biz-get"><b>Бизнес «под ключ»:</b> сквозное проектирование бизнес-модели, оргструктуры и операционных процессов — с нуля или в режиме реинжиниринга действующей компании.</div>
+      </div>
+      <div class="biz-card reveal reveal-delay-1">
+        <div class="bnum">B · 08 — Бенчмарки</div>
+        <h4>Бенчмаркинг и лучшие практики</h4>
+        <div class="biz-get"><b>Реалистичные цели:</b> сравнение с лидерами отрасли и кросс-категорийные бенчмарки, перенос работающих практик из смежных рынков.</div>
+      </div>
+      <div class="biz-card reveal reveal-delay-2">
+        <div class="bnum">B · 09 — Программа</div>
+        <h4>Комплексные стратегии развития</h4>
+        <div class="biz-get"><b>Единая дорожная карта:</b> связка маркетинга, аналитики и бенчмарков в одну программу развития бизнеса с приоритетами и метриками.</div>
+      </div>
+    </div>
+
+    <!-- Hackathons & strategic sessions — signature format -->
+    <div class="uni-benefits reveal">
+      <div class="ub-head">
+        <div class="label">Фирменный формат</div>
+        <h3>Хакатоны и <em>стратегические сессии</em></h3>
+      </div>
+      <div class="ub-grid">
+        <div class="ub-item">
+          <div class="ub-num">01</div>
+          <p><b style="color:#fff;">Стратегические сессии.</b> За 1–2 дня команда формулирует решение реальной задачи, синхронизирует видение и выходит с планом внедрения. Эффект — вовлечённость, скорость и готовый результат, а не презентация «в стол».</p>
+        </div>
+        <div class="ub-item">
+          <div class="ub-num">02</div>
+          <p><b style="color:#fff;">Хакатоны.</b> Интенсивный формат генерации и проверки решений: вовлекает сотрудников, выявляет таланты внутри компании и даёт работающие прототипы за считанные дни.</p>
+        </div>
+      </div>
+
+      <div style="margin-top:50px; padding-top:36px; border-top:1px solid rgba(244,239,230,0.18);">
+        <div class="label" style="color:var(--accent); margin-bottom:16px;">Уникальная комбинация</div>
+        <h3 style="font-size:clamp(24px,3vw,38px); margin-bottom:24px;">Бизнес + студенты <em>на площадке университета</em></h3>
+        <p style="font-size:16px; line-height:1.65; color:rgba(244,239,230,0.82); max-width:75ch;">
+          Хакатоны и стратегические сессии проводятся на площадке университета с привлечением студентов и научных команд. Это редкое сочетание даёт каждой стороне свою выгоду:
+        </p>
+        <div class="ub-grid" style="margin-top:30px;">
+          <div class="ub-item">
+            <div class="ub-num">→</div>
+            <p><b style="color:#fff;">Бизнесу</b> — свежие идеи, доступ к R&amp;D-разработкам и кадровый резерв: участники проявляют себя в работе над реальной задачей.</p>
+          </div>
+          <div class="ub-item">
+            <div class="ub-num">→</div>
+            <p><b style="color:#fff;">Сотрудникам</b> — внешний взгляд и энергия молодых команд, выход из операционной рутины, новые решения.</p>
+          </div>
+          <div class="ub-item">
+            <div class="ub-num">→</div>
+            <p><b style="color:#fff;">Университету</b> — реальные бизнес-кейсы для студентов, связь науки с практикой и контакты с индустрией.</p>
+          </div>
+          <div class="ub-item">
+            <div class="ub-num">→</div>
+            <p><b style="color:#fff;">Результат</b> — прикладные решения, прототипы и пул проверенных кандидатов уже по итогам одного формата.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Cases -->
+    <div class="cases-wrap reveal">
+      <div class="label">Примеры проектов — обезличенные кейсы</div>
+      <div class="cases-grid">
+        <div class="case-card">
+          <div class="case-sector">Производство · трубная отрасль</div>
+          <h4>Производственное планирование на трубном производстве</h4>
+          <div class="case-block">
+            <div class="cb-lbl">Задача</div>
+            <div class="cb-txt">Разрозненное планирование, простои оборудования и срывы сроков отгрузки. Загрузка мощностей определялась «вручную», без единой модели и приоритизации заказов.</div>
+          </div>
+          <div class="case-block">
+            <div class="cb-lbl">Решение</div>
+            <div class="cb-txt">Построена модель производственного планирования: балансировка загрузки линий, приоритизация заказов, увязка плана производства со сбытом и закупками сырья. Внедрены KPI и регламент планёрок.</div>
+          </div>
+          <div class="case-result">
+            <div class="cb-lbl">Результат</div>
+            <ul>
+              <li>Сокращение простоев и числа срывов сроков</li>
+              <li>Рост точности и горизонта планирования</li>
+              <li>Прозрачная загрузка мощностей и приоритеты заказов</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="case-card">
+          <div class="case-sector">HoReCa · общественное питание</div>
+          <h4>«Ресторан будущего»: новая операционная модель</h4>
+          <div class="case-block">
+            <div class="cb-lbl">Задача</div>
+            <div class="cb-txt">Разработать концепцию ресторана нового формата: технологичный клиентский опыт, эффективная экономика и масштабируемая операционная модель под последующее тиражирование.</div>
+          </div>
+          <div class="case-block">
+            <div class="cb-lbl">Решение</div>
+            <div class="cb-txt">Спроектированы концепция и позиционирование, клиентский путь и операционные процессы, финансовая модель и меню-инжиниринг. Заложена технологизация сервиса и стандарты для сети.</div>
+          </div>
+          <div class="case-result">
+            <div class="cb-lbl">Результат</div>
+            <ul>
+              <li>Готовая концепция и операционная модель под запуск</li>
+              <li>Финансовая модель с оценкой жизнеспособности</li>
+              <li>Стандарты, пригодные для масштабирования сети</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <p class="case-note" style="font-size:12.5px; color:var(--mute); margin-top:20px; line-height:1.5;">
+        Кейсы приведены в обезличенном виде: названия компаний-заказчиков и персональные данные не раскрываются. Конкретные показатели предоставляются по запросу в рамках обсуждения проекта.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ─── UNIVERSITIES ────────────────────────────────────────── -->
+<section class="uni" id="universities">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="left">
+        <div class="eyebrow reveal">Для университетов</div>
+        <div class="num-tag reveal reveal-delay-1">Наука + рынок</div>
+      </div>
+      <div class="right">
+        <h2 class="reveal">Программы <em>для</em> университетов и учебных заведений.</h2>
+        <p class="lede reveal reveal-delay-1">
+          Олег Омельченко разрабатывает и ведёт образовательные программы для вузов, бизнес-школ и профессиональных образовательных организаций. Более 15 лет опыта в высшем образовании, руководство Центром трансфера технологий и реализация международных грантовых программ (Африка–ЕврАзЭС) позволяют выстраивать связку университетской науки с реальным рынком и привлекать внешнее финансирование.
+        </p>
+      </div>
+    </div>
+
+    <div class="uni-highlights reveal">
+      <div class="uni-hl">
+        <div class="hl-num">15<sup>+</sup></div>
+        <div class="hl-txt"><strong>лет в высшем образовании</strong>преподавание, программы, научное руководство</div>
+      </div>
+      <div class="uni-hl">
+        <div class="hl-num">ЦТТ</div>
+        <div class="hl-txt"><strong>Центр трансфера технологий</strong>руководство коммерциализацией разработок вуза</div>
+      </div>
+      <div class="uni-hl">
+        <div class="hl-num">Гранты</div>
+        <div class="hl-txt"><strong>международные программы</strong>опыт реализации грантов Африка–ЕврАзЭС</div>
+      </div>
+    </div>
+
+    <div class="label reveal" style="margin-bottom: 26px;">Методология ведущих школ</div>
+    <div class="uni-programs">
+      <div class="uni-prog reveal">
+        <div class="pnum">Harvard Business School</div>
+        <h4>Case Method</h4>
+        <p>Разбор управленческих кейсов без заранее заданного ответа. Участники принимают решения в условиях неопределённости и обосновывают их перед группой.</p>
+      </div>
+      <div class="uni-prog reveal reveal-delay-1">
+        <div class="pnum">MIT Sloan</div>
+        <h4>Action Learning</h4>
+        <p>Обучение через работу над реальными задачами компании или кафедры в ходе программы. Результат — прикладное решение и план внедрения.</p>
+      </div>
+      <div class="uni-prog reveal reveal-delay-2">
+        <div class="pnum">Wharton</div>
+        <h4>Learning Teams</h4>
+        <p>Малые группы с разным профессиональным и отраслевым опытом. Формат поддерживает обмен практиками между участниками экосистемы.</p>
+      </div>
+      <div class="uni-prog reveal">
+        <div class="pnum">Kellogg</div>
+        <h4>Socratic Method</h4>
+        <p>Преподаватель ведёт обсуждение через вопросы и помогает участникам сформулировать выводы самостоятельно на учебном материале.</p>
+      </div>
+      <div class="uni-prog reveal reveal-delay-1">
+        <div class="pnum">Stanford GSB</div>
+        <h4>Field Immersion</h4>
+        <p>Погружение в практический контекст: визиты на предприятия, интервью с практиками, полевые исследования в каналах продаж и дистрибуции.</p>
+      </div>
+      <div class="uni-prog reveal reveal-delay-2">
+        <div class="pnum">Форматы программ</div>
+        <h4>ПК · Лекции · Конференции</h4>
+        <p>Краткосрочные модульные программы повышения квалификации, гостевые лекции для студентов и аспирантов, организация и модерация отраслевых конференций.</p>
+      </div>
+    </div>
+
+    <div class="label reveal" style="margin-top: 80px; margin-bottom: 4px;">Связка бизнеса и университета</div>
+    <div class="uni-services">
+      <div class="uni-srv-row reveal">
+        <div class="srv-num">У·01</div>
+        <div class="srv-title">Аудит <em>прикладного</em> потенциала</div>
+        <div class="srv-desc">Оценка патентов, разработок и ноу-хау университета с точки зрения применения в реальных отраслях и бизнес-моделях.</div>
+      </div>
+      <div class="uni-srv-row reveal">
+        <div class="srv-num">У·02</div>
+        <div class="srv-title">Упаковка <em>решений</em> для рынка</div>
+        <div class="srv-desc">Разработка коммерческих предложений, питч-деков и технологических паспортов для индустриальных партнёров.</div>
+      </div>
+      <div class="uni-srv-row reveal">
+        <div class="srv-num">У·03</div>
+        <div class="srv-title">Поиск <em>индустриальных</em> партнёров</div>
+        <div class="srv-desc">Подбор производителей и компаний, заинтересованных в лицензировании или совместной разработке.</div>
+      </div>
+      <div class="uni-srv-row reveal">
+        <div class="srv-num">У·04</div>
+        <div class="srv-title">Создание <em>спин-офф</em> компаний</div>
+        <div class="srv-desc">Сопровождение запуска проектов на базе университетских разработок — от идеи до первых продаж.</div>
+      </div>
+      <div class="uni-srv-row reveal">
+        <div class="srv-num">У·05</div>
+        <div class="srv-title">Корпоративные <em>R&amp;D</em>-партнёрства</div>
+        <div class="srv-desc">Выстраивание долгосрочных связей между бизнесом и научными командами университета.</div>
+      </div>
+      <div class="uni-srv-row reveal">
+        <div class="srv-num">У·06</div>
+        <div class="srv-title">Программы <em>по</em> коммерциализации</div>
+        <div class="srv-desc">Обучение команд университета навыкам вывода инноваций на рынок и работы с индустрией.</div>
+      </div>
+    </div>
+
+    <!-- What the university gets -->
+    <div class="uni-benefits reveal">
+      <div class="ub-head">
+        <div class="label">Результат для вуза</div>
+        <h3>Что получает <em>университет</em></h3>
+      </div>
+      <div class="ub-grid">
+        <div class="ub-item">
+          <div class="ub-num">01</div>
+          <p>Монетизация научных разработок и патентов через индустриальные контракты и лицензирование.</p>
+        </div>
+        <div class="ub-item">
+          <div class="ub-num">02</div>
+          <p>Привлечение корпоративного финансирования в R&amp;D-направления университета.</p>
+        </div>
+        <div class="ub-item">
+          <div class="ub-num">03</div>
+          <p>Повышение рейтинговых показателей по прикладному внедрению разработок.</p>
+        </div>
+        <div class="ub-item">
+          <div class="ub-num">04</div>
+          <p>Новые форматы взаимодействия с индустрией и реальным сектором.</p>
+        </div>
+        <div class="ub-item">
+          <div class="ub-num">05</div>
+          <p>Готовые скрипты и инструменты для переговоров с бизнесом и инвесторами.</p>
+        </div>
+        <div class="ub-item">
+          <div class="ub-num">06</div>
+          <p>Доступ к сети индустриальных партнёров: производители, ритейл, дистрибуция, бренды.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Academic partners -->
+    <div class="uni-partners reveal">
+      <div class="label">Академические партнёры</div>
+      <div class="uni-partners-grid">
+        <div class="uni-partner">РЭУ им. Г.В. Плеханова<span>Москва</span></div>
+        <div class="uni-partner">НИТУ МИСИС<span>Москва</span></div>
+        <div class="uni-partner">НИУ ВШЭ<span>Высшая школа экономики</span></div>
+        <div class="uni-partner">РОСБИОТЕХ<span>МГУПП · ЦКТ</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── SCHOLARSHIP (DARK) ─────────────────────────────────── -->
+<section class="scholarship" id="scholarship">
+  <div class="wrap-w">
+    <div class="section-head">
+      <div class="left">
+        <div class="eyebrow reveal">Научный вклад</div>
+        <div class="num-tag reveal reveal-delay-1" style="color: rgba(244,239,230,0.5);">§ 06 / 06</div>
+      </div>
+      <div class="right">
+        <h2 class="reveal">Монографии, <em>публикации,</em> авторские методологии.</h2>
+        <p class="lede reveal reveal-delay-1">
+          Автор более 55 научных публикаций и 4 монографий. Две монографии посвящены экономике и управлению хлебопекарной отраслью России и методологии управления интегрированными корпоративными образованиями в промышленности. Авторские методологии депонированы в РЦИС — общественно-государственной блокчейн-инфраструктуре.
+        </p>
+      </div>
+    </div>
+
+    <div class="profile-stats reveal" style="background: rgba(244,239,230,0.12); margin-bottom: 50px;">
+      <div class="profile-stat">
+        <div class="label">Публикации</div>
+        <div class="num">55<sup>+</sup></div>
+        <div class="desc">в рецензируемых научных изданиях по FMCG</div>
+      </div>
+      <div class="profile-stat">
+        <div class="label">Монографии</div>
+        <div class="num">4</div>
+        <div class="desc">авторские исследования</div>
+      </div>
+    </div>
+
+    <div class="mono-grid">
+      <div class="mono-card reveal">
+        <div class="mono-num">М · 01 / Монография первая</div>
+        <h3>«Экономика и управление реконфигурацией хлебопекарной отрасли России»</h3>
+        <div class="mono-meta">
+          <div>УДК <span>338.439.4 : 664.66</span></div>
+          <div>ISBN <span>978-1-963992-86-1</span></div>
+          <div>DOI <span>10.25726/n2458-9660-0500-s</span></div>
+          <div>РЦИС <span>№ 1478-277-814 · 14.05.2026</span></div>
+        </div>
+        <div class="mono-desc">
+          Авторский комплекс методологий, моделей и диагностических инструментов для управления реконфигурацией FMCG-направления хлебобулочной продукции. Включает методологию адаптивного управления компетенциями и модель PACE/HLRM.
+        </div>
+      </div>
+      <div class="mono-card reveal reveal-delay-1">
+        <div class="mono-num">М · 02 / Монография вторая</div>
+        <h3>«Методология управления интегрированными корпоративными образованиями в промышленности»</h3>
+        <div class="mono-meta">
+          <div>Направление <span>ИКО, цифровая трансформация</span></div>
+          <div>Применение <span>FMCG-цепочки поставок, каналы сбыта</span></div>
+          <div>РЦИС <span>№ 1778-331-766 · 22.04.2026</span></div>
+        </div>
+        <div class="mono-desc">
+          Теоретические основы и практический инструментарий управления интегрированными корпоративными образованиями (ИКО) в условиях цифровой трансформации FMCG-категорий, цепочек поставок и каналов сбыта.
+        </div>
+      </div>
+    </div>
+
+    <div class="rcis-note reveal">
+      <strong>Что такое РЦИС?</strong> Российский центр оборота прав на результаты творческой деятельности. Общественно-государственная блокчейн-инфраструктура, объединяющая Роспатент, Фонд «Сколково», Суд по интеллектуальным правам и технологические компании. Свидетельство РЦИС подтверждает авторство и права на интеллектуальную собственность в государственном цифровом реестре.
+    </div>
+  </div>
+</section>
+
+<!-- ─── PROCESS / FORMATS ──────────────────────────────────── -->
+<section id="formats">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="left">
+        <div class="eyebrow reveal">Форматы работы</div>
+        <div class="num-tag reveal reveal-delay-1">Как мы работаем</div>
+      </div>
+      <div class="right">
+        <h2 class="reveal">От <em>экспресс-диагностики</em> до годового сопровождения.</h2>
+        <p class="lede reveal reveal-delay-1">
+          Форматы взаимодействия подбираются под задачу клиента: разовая сессия, проектное сопровождение или долгосрочный консалтинг. Каждая модель предполагает прямое участие Олега Омельченко на ключевых этапах.
+        </p>
+      </div>
+    </div>
+
+    <div class="process">
+      <div class="proc-step reveal">
+        <div class="step-num">01</div>
+        <h4>Экспресс-сессии</h4>
+        <p>Разовые экспертные сессии и экспресс-диагностика FMCG-задач для точечной проверки решений.</p>
+      </div>
+      <div class="proc-step reveal reveal-delay-1">
+        <div class="step-num">02</div>
+        <h4>Проектное сопровождение</h4>
+        <p>Проекты длительностью 3–6 месяцев с разработкой решения, согласованием подхода и контролем результата.</p>
+      </div>
+      <div class="proc-step reveal reveal-delay-2">
+        <div class="step-num">03</div>
+        <h4>Абонентский консалтинг</h4>
+        <p>Долгосрочный консалтинг для FMCG-команд: регулярные сессии, аналитика и поддержка стратегических решений.</p>
+      </div>
+      <div class="proc-step reveal reveal-delay-3">
+        <div class="step-num">04</div>
+        <h4>Бизнес-туризм</h4>
+        <p>Семинары и визиты на FMCG-производства и объекты ритейла. Онлайн- и офлайн-форматы — Москва и регионы.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── PARTNERS ───────────────────────────────────────────── -->
+<section class="partners" id="partners">
+  <div class="wrap">
+    <div class="section-head" style="margin-bottom: 40px;">
+      <div class="left">
+        <div class="eyebrow reveal">Партнёры</div>
+        <div class="num-tag reveal reveal-delay-1">Академические и отраслевые</div>
+      </div>
+      <div class="right">
+        <h2 class="reveal" style="font-size: clamp(36px, 4.5vw, 64px);">Сеть <em>экспертов</em> и институтов.</h2>
+        <p class="lede reveal reveal-delay-1">
+          Для каждого проекта мы привлекаем профильных экспертов — специалистов по FMCG, аналитиков и практиков с релевантным опытом в категории, дистрибуции, ритейле и брендинге. Это позволяет формировать команду под конкретную задачу клиента.
+        </p>
+      </div>
+    </div>
+
+    <div class="partners-grid reveal">
+      <div class="partner">РЭУ им. Плеханова</div>
+      <div class="partner">МИСИС (НИТУ)</div>
+      <div class="partner">ВШЭ</div>
+      <div class="partner">РОСБИОТЕХ</div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── CONTACT (DARK) ─────────────────────────────────────── -->
+<section class="contact" id="contact">
+  <div class="wrap-w">
+    <div class="eyebrow reveal" style="margin-bottom: 32px;">Запуск проекта</div>
+    <h2 class="contact-headline reveal reveal-delay-1">
+      Опишите задачу&nbsp;— <span class="ornament">⟶</span><br/>
+      ответим <em>в течение</em> 12 часов.
+    </h2>
+
+    <div class="contact-meta">
+      <div class="reveal reveal-delay-2">
+        <div class="label">Email</div>
+        <a href="mailto:education@omelchenckooleq.ru">education@omelchenckooleq.ru</a>
+      </div>
+      <div class="reveal reveal-delay-3">
+        <div class="label">Telegram</div>
+        <a href="https://t.me/omo_education">@omo_education</a>
+      </div>
+      <div class="reveal reveal-delay-4">
+        <div class="label">Локация</div>
+        <p>Москва · Россия — онлайн &amp; офлайн, выезд в регионы</p>
+      </div>
+    </div>
+
+    <div class="contact-cta-row reveal reveal-delay-4">
+      <a class="btn btn--solid" href="mailto:education@omelchenckooleq.ru">
+        <span>Оставить бриф</span><span class="arrow">→</span>
+      </a>
+      <a class="btn btn--ghost" href="#services">
+        <span>Каталог программ</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap-w">
+    <div style="display:flex; align-items:center; gap:12px;">
+      <svg viewBox="0 0 400 240" width="38" height="23" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="flex-shrink:0;">
+        <defs><clipPath id="footMark"><circle cx="150" cy="120" r="92"/></clipPath></defs>
+        <g clip-path="url(#footMark)"><circle cx="250" cy="120" r="92" fill="#b8763e"/></g>
+        <circle cx="150" cy="120" r="92" fill="none" stroke="#f4efe6" stroke-width="14"/>
+        <circle cx="250" cy="120" r="92" fill="none" stroke="#f4efe6" stroke-width="14"/>
+      </svg>
+      <span>© Олег Омельченко · MMXXVI</span>
+    </div>
+    <div>Стратегия · Образование · Трансфер технологий · FMCG</div>
+    <div>Все права защищены</div>
+  </div>
+</footer>
+
+<script>
+  // ─── Scroll reveals ──────────────────────────────────────
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((e) => {
+      if (e.isIntersecting) {
+        e.target.classList.add('in');
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  // ─── Nav shrink on scroll ───────────────────────────────
+  const nav = document.querySelector('nav');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 30) nav.style.padding = '12px 40px';
+    else nav.style.padding = '18px 40px';
+  });
+</script>
+</body>
+</html>
