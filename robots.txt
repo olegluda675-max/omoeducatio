@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://omoeducation.online/sitemap.xml
