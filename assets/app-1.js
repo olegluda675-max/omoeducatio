@@ -1,0 +1,2 @@
+document.querySelectorAll('.program-directory').forEach(directory=>{directory.querySelectorAll('[data-filter]').forEach(button=>{button.addEventListener('click',()=>{const selected=button.dataset.filter;directory.querySelectorAll('[data-filter]').forEach(b=>b.setAttribute('aria-pressed',String(b===button)));directory.querySelectorAll('[data-audience]').forEach(card=>{card.hidden=selected!=='all'&&!card.dataset.audience.split(' ').includes(selected);});});});});
+document.documentElement.classList.add('program-filter-ready');

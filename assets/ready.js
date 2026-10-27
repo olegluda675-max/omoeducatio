@@ -1,0 +1,1 @@
+(()=>{'use strict';const saved=new Map();window.addEventListener('beforeprint',()=>{document.querySelectorAll('details').forEach(d=>{if(!saved.has(d))saved.set(d,d.open);d.open=true;});});window.addEventListener('afterprint',()=>{saved.forEach((open,d)=>d.open=open);saved.clear();});})();
